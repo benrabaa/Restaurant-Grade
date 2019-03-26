@@ -1,0 +1,86 @@
+<resources>
+    <string name="app_name">RestaurantGrades</string>
+
+
+    <string-array name="Boroughs">
+        <item>Brooklyn</item>
+        <item>The Bronx</item>
+        <item>Queens</item>
+        <item>Manhattan</item>
+        <item>Staten Island</item>
+    </string-array>
+
+    <string-array name="Brooklyn">
+        <item>Bath Beach</item>
+        <item>Bay Ridge</item>
+        <item>Bedford-Stuyvesant</item>
+        <item>Bensonhurst</item>
+        <item>Boerum Hill</item>
+        <item>Borough Park</item>
+        <item>Brighton Beach</item>
+        <item>Brooklyn Heights</item>
+        <item>Brooklyn Navy Yard</item>
+        <item>Brownsville</item>
+        <item>Bushwick</item>
+        <item>Canarsie</item>
+        <item>Carroll Gardens</item>
+        <item>Clinton Hill</item>
+        <item>Cobble Hill</item>
+        <item>Columbia Heights</item>
+        <item>Coney Island</item>
+        <item>Crown Heights</item>
+        <item>Cypress Hills</item>
+        <item>Ditmas Park</item>
+        <item>Downtown Brooklyn</item>
+        <item>DUMBO</item>
+        <item>Dyker Heights</item>
+        <item>East New York</item>
+        <item>East Williamsburg</item>
+        <item>Farragut</item>
+        <item>Fulton Ferry District</item>
+        <item>Flatbush</item>
+        <item>Flatlands</item>
+        <item>Fort Greene</item>
+        <item>Fort Hamilton</item>
+        <item>Gerritsen Beach</item>
+        <item>Gowanus</item>
+        <item>Gravesend</item>
+        <item>Greenpoint</item>
+        <item>Greenwood</item>
+        <item>Homecrest</item>
+        <item>Industry City/Bush Terminal</item>
+        <item>Kensington</item>
+        <item>Kings Highway</item>
+        <item>Kings Plaza</item>
+        <item>Madison</item>
+        <item>Manhattan Beach</item>
+        <item>Mapleton</item>
+        <item>Marine Park</item>
+        <item>Midwood</item>
+        <item>Mill Basin</item>
+        <item>New Lots</item>
+        <item>Northeast Flatbush</item>
+        <item>Ocean Hill</item>
+        <item>Old Mill Basin</item>
+        <item>Park Slope</item>
+        <item>Prospect Park</item>
+        <item>Prospect Heights</item>
+        <item>Prospect Lefferts Gardens</item>
+        <item>Prospect Park South</item>
+        <item>Red Hook</item>
+        <item>Seagate</item>
+        <item>Sheepshead Bay</item>
+        <item>Starrett City</item>
+        <item>Stuyvesant Heights</item>
+        <item> Sunset Park</item>
+        <item>Vinegar Hill</item>
+        <item>Weeksville</item>
+        <item>Windsor Terrace</item>
+        <item>Williamsburg</item>
+        <item>Windsor Terrace</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
