@@ -1,30 +1,19 @@
 package org.pursuit.restaurantgrades.Views;
 
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
-import org.pursuit.restaurantgrades.Models.NeighborhoodResponse;
-import org.pursuit.restaurantgrades.Models.RestaurantResponse;
+import org.pursuit.restaurantgrades.Models.Restaurant;
 import org.pursuit.restaurantgrades.R;
-import org.pursuit.restaurantgrades.network.DataRepository;
 //import org.pursuit.restaurantgrades.Models.NeighborhoodResponse;
-import org.pursuit.restaurantgrades.network.ApiClient;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-
 public class MainActivity extends AppCompatActivity implements OnFragmentInteractionListener {
     private List<String> neighborhoodResponseList=new ArrayList<>();
+    private List<List<String>> restaurantList =new ArrayList<>();
     private Spinner neighborhoodsSpinner;
     private Spinner boroughsSpinner;
 
@@ -36,20 +25,11 @@ public class MainActivity extends AppCompatActivity implements OnFragmentInterac
 
 //        neighborhoodsSpinner =findViewById(R.id.Neighborhoods_spinner);
 //        boroughsSpinner=findViewById(R.id.boroughs);
-        DataRepository dataRepository=new DataRepository(new ApiClient());
-        dataRepository.getNeighborhood().enqueue(new Callback<NeighborhoodResponse>() {
-            @Override
-            public void onResponse(Call<NeighborhoodResponse> call, Response<NeighborhoodResponse> response) {
-                for(List<String> n:response.body().getNeighborhoodList()){
-                    neighborhoodResponseList.add(n.get(10));
-                }
-            }
 
-            @Override
-            public void onFailure(Call<NeighborhoodResponse> call, Throwable t) {
 
-            }
-        });
+
+
+
 
 
        // ArrayAdapter<String> adapter=new ArrayAdapter<String>(
@@ -92,12 +72,12 @@ public class MainActivity extends AppCompatActivity implements OnFragmentInterac
 
     @Override
     public void openSearchByNameFragment() {
-//        SearchByNameFragment searchByNameFragment= SearchByNameFragment.newInstance();
+//        SearchByNameFragment searchByNameFragment= SearchByNameFragment.getInstance();
 //        searchByNameFragment.getFragmentManager().beginTransaction().replace(R.id.fragment_container,searchByNameFragment).commit();
 
 
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fragment_container, SearchByNameFragment.newInstance())
+                .replace(R.id.fragment_container, SearchByNameFragment.newInstance(restaurantList))
                 .addToBackStack(null)
                 .commit();
 //
@@ -112,5 +92,17 @@ public class MainActivity extends AppCompatActivity implements OnFragmentInterac
     public void openSearchFragment() {
         SearchFragment searchFragment=SearchFragment.getInstance();
         searchFragment.getFragmentManager().beginTransaction().replace(R.id.fragment_container,searchFragment).commit();
+    }
+
+    @Override
+    public void openDetailsFragment(List<Restaurant> restaurantList) {
+
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment_container,DetailsFragment.getInstance(restaurantList))
+                .addToBackStack(null)
+                .commit();
+//        DetailsFragment detailsFragment=DetailsFragment.getInstance(restaurantList);
+//        detailsFragment.getFragmentManager().beginTransaction().replace(R.id.fragment_container,detailsFragment).commit();
+
     }
 }

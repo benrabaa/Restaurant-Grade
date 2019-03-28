@@ -1,7 +1,11 @@
 package org.pursuit.restaurantgrades.network;
 
 import org.pursuit.restaurantgrades.Models.NeighborhoodResponse;
+import org.pursuit.restaurantgrades.Models.Restaurant;
+import org.pursuit.restaurantgrades.Models.RestaurantQueryResponse;
 import org.pursuit.restaurantgrades.Models.RestaurantResponse;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Retrofit;
@@ -19,7 +23,7 @@ public class ApiClient {
 
     }
 
-    private   Retrofit getRetrofitInstance(String baseUrl){
+    private Retrofit getRetrofitInstance(String baseUrl){
 
           return new Retrofit.Builder()
                     .baseUrl(baseUrl)
@@ -32,7 +36,7 @@ public class ApiClient {
     private void initApis(){
     restaurantDataApi=getRetrofitInstance("https://data.cityofnewyork.us").create(RestaurantDataApi.class);
     neighborhoodApi =getRetrofitInstance("https://data.cityofnewyork.us").create(NeighborhoodApi.class);
-
+       // https://data.cityofnewyork.us/resource/9w7m-hzhe.json?dba=CLAUDIO%27S&$order=inspection_date%20DESC&$limit=10
 
     }
 
@@ -42,5 +46,8 @@ public class ApiClient {
     }
     public Call<NeighborhoodResponse> getNeighborhood(){
         return neighborhoodApi.getNeighborhood();
+    }
+    public Call<List<Restaurant>> getRestaurantQueryList(String restaurantName,String boroughs){
+        return restaurantDataApi.getRestaurantDataQuery(restaurantName,boroughs,"inspection_date DESC","5");
     }
 }
