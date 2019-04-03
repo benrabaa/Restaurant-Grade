@@ -7,6 +7,7 @@ import org.pursuit.restaurantgrades.Models.RestaurantResponse;
 
 import java.util.List;
 
+import io.reactivex.Observable;
 import retrofit2.Call;
 
 public class DataRepository {
@@ -20,12 +21,31 @@ public class DataRepository {
         return apiClient.getRestaurant();
 
     }
-    public Call<List<Restaurant>> getRestaurantDataQuery(String restaurantName,String boroughs){
-        return apiClient.getRestaurantQueryList(restaurantName,boroughs);
+    public Observable<List<Restaurant>> getRestaurantDataQuery(String restaurantName){
+        return apiClient.getRestaurantQueryList(restaurantName);
 
     }
+    public Call<List<Restaurant>> getRestaurantByName2(String restaurantName,String boroughs){
+        return apiClient.getRestaurantByName2(restaurantName,boroughs);
+
+    }
+    public Observable<List<Restaurant>> getRestaurantByName(String restaurantName,String boroughs){
+        return apiClient.getRestaurantByName(restaurantName,boroughs);
+
+    }
+
+    public Observable<List<Restaurant>> getRestaurantZipCodeDataQuery(String zipCode){
+        return apiClient.getRestaurantZipCodeQueryList(zipCode);
+
+    }
+
     public Call<NeighborhoodResponse> getNeighborhood(){
         return apiClient.getNeighborhood();
+
+    }
+
+    public Observable<List<Restaurant>> getCuisine(){
+        return apiClient.getCuisine();
 
     }
 }

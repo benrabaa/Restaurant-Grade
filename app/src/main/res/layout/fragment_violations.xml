@@ -1,14 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardView2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Views.ViolationsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/inspection_date_value"
+            android:layout_width="163dp"
+            android:layout_height="29dp"
+            android:layout_marginEnd="28dp"
+            android:text="Inspection date:"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/inspection_date"
+            android:layout_width="139dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="18dp"
+            android:text="Inspection date:"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/critical_flag_value"
+            app:layout_constraintEnd_toStartOf="@+id/inspection_date_value"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/critical_flag_value"
+            android:layout_width="161dp"
+            android:layout_height="29dp"
+            android:layout_marginStart="222dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="28dp"
+            android:layout_marginBottom="8dp"
+            android:text="Critical flag "
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/violation_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/cardView2"
+            app:layout_constraintTop_toBottomOf="@+id/inspection_date_value" />
+
+        <TextView
+            android:id="@+id/critical_flag"
+            android:layout_width="130dp"
+            android:layout_height="23dp"
+            android:layout_marginStart="104dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            android:text="Critical flag: "
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/violation_description"
+            app:layout_constraintEnd_toStartOf="@+id/critical_flag_value"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inspection_date"
+            app:layout_constraintVertical_bias="0.428" />
+
+        <TextView
+            android:id="@+id/violation_description_value"
+            android:layout_width="378dp"
+            android:layout_height="139dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="Violation description:"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/violation_description"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/violation_description"
+            android:layout_width="379dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="68dp"
+            android:text="Violation description:"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>

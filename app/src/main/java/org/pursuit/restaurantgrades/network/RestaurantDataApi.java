@@ -6,6 +6,7 @@ import org.pursuit.restaurantgrades.Models.RestaurantResponse;
 
 import java.util.List;
 
+import io.reactivex.Observable;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
@@ -19,13 +20,36 @@ public interface RestaurantDataApi {
 
    // https://data.cityofnewyork.us/resource/9w7m-hzhe.json?dba=RUBIROSA PIZZA %26 RISTORANTE
     @GET("/resource/9w7m-hzhe.json?")
-    Call<List<Restaurant>> getRestaurantDataQuery(
+    Observable<List<Restaurant>> getRestaurantDataQuery(
             //@Header("Authorization") String apiKey,
             @Query("dba")String restaurantName,
-            @Query("boro") String boroughs,
+          //  @Query("boro") String boroughs,
             @Query("$order") String order,
             @Query("$limit") String limit
     );
-    //https://data.cityofnewyork.us/resource/9w7m-hzhe.json?dba=CLAUDIO%27S&$order=inspection_date%20DESC&$limit=10
+
+    @GET("/resource/9w7m-hzhe.json?")
+    Call<List<Restaurant>> getRestaurantByName2(
+            @Query("dba")String restaurantName,
+            @Query("boro") String boroughs,
+            @Query("$order") String order
+    );
+
+    @GET("/resource/9w7m-hzhe.json?")
+    Observable<List<Restaurant>> getRestaurantByName(
+            @Query("dba")String restaurantName,
+            @Query("boro") String boroughs,
+            @Query("$order") String order
+    );
+
+    @GET("/resource/9w7m-hzhe.json?")
+    Observable<List<Restaurant>> getRestaurantZipCodeDataQuery(
+            @Query("zipcode")String zipCode,
+            @Query("$order") String order
+    );
+
+
+    @GET("/resource/9w7m-hzhe.json?")
+    Observable<List<Restaurant>> getCuisine();
 
 }
