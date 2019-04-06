@@ -87,11 +87,11 @@ public class RestaurantRecyclerViewFragment extends Fragment {
             }
         }
 
-        for (String s: restaurantHashMap.keySet()){
-            String key =s;
-            String value = restaurantHashMap.get(key).toString();
-            System.out.println(key + " " + value);
-        }
+//        for (String s: restaurantHashMap.keySet()){
+//            String key =s;
+//            String value = restaurantHashMap.get(key).toString();
+//            System.out.println(key + " " + value);
+//        }
 
        // System.out.println(restaurantHashMap.get("50008504").getInspection_date());
 

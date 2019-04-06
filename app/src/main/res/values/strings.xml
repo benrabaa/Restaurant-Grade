@@ -5,7 +5,7 @@
     <string-array name="Boroughs">
         <item>Please select a Borough</item>
         <item>Brooklyn</item>
-        <item>The Bronx</item>
+        <item>Bronx</item>
         <item>Queens</item>
         <item>Manhattan</item>
         <item>Staten Island</item>
@@ -15,7 +15,7 @@
         <item>Please select a Neighborhood</item>
         <item>Bath Beach</item>
         <item>Bay Ridge</item>
-        <item>Bedford-Stuyvesant</item>
+        <item>Bedford_Stuyvesant</item>
         <item>Bensonhurst</item>
         <item>Boerum Hill</item>
         <item>Borough Park</item>
@@ -1206,7 +1206,7 @@
         <item>11417</item>
     </string-array>
 
-    <string-array name="Sunnyside">
+    <string-array name="SunnysideQ">
         <item>11104</item>
     </string-array>
 

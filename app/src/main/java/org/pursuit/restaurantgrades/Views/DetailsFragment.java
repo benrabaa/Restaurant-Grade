@@ -41,6 +41,7 @@ public class DetailsFragment extends Fragment {
     private String location;
     private DataRepository dataRepositoryQuery = new DataRepository(new ApiClient());
     private List<Restaurant> restaurantQueryList=new ArrayList<>();
+    private ViolationsAdapter violationsAdapter;
 
 
 
@@ -155,36 +156,34 @@ public class DetailsFragment extends Fragment {
         });
 
         ////viewpager for violations
-
+        violationsFragmentList.clear();
         int indexT= restaurant.getInspection_date().indexOf('T');
-
+        violationsAdapter=new ViolationsAdapter(getFragmentManager(),violationsFragmentList);
+        viewPager.setAdapter(violationsAdapter);
         Disposable restaurantsListByName =
 
                 dataRepositoryQuery.getRestaurantDataQuery(restaurant.getDba())
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe(restaurantListByName -> {
-                                    restaurantQueryList.addAll(restaurantListByName);
-                                    Log.d("all", "getInspection_date().indexOf('T'): " +restaurantQueryList.size());
-                            for (Restaurant R: restaurantQueryList) {
-                                Log.d("fragmentcount", "onViewCreated: "+restaurantQueryList.size());
-                                violationsFragmentList.add(ViolationsFragment.getInstance(R.getInspection_date().substring(0,indexT), R.getCritical_flag(),R.getViolation_description()));
-                            }
-                            viewPagerSetup();
+                                    restaurantQueryList=restaurantListByName;
+                                    for (Restaurant R: restaurantQueryList) {
+                                        violationsFragmentList.add(ViolationsFragment.getInstance(R.getInspection_date().substring(0,indexT), R.getCritical_flag(),R.getViolation_description()));
 
-                            ViolationsAdapter violationsAdapter=new ViolationsAdapter(getFragmentManager(),violationsFragmentList);
+                                     }
 
+                            violationsAdapter.setFragmentList(violationsFragmentList);
+                                    //viewPagerSetup();
                                 }, throwable -> throwable.printStackTrace()
                         );
 
 
 
-        for (Restaurant R: restaurantQueryList) {
-            Log.d("fragmentcount", "onViewCreated: "+restaurantQueryList.size());
-            violationsFragmentList.add(ViolationsFragment.getInstance(R.getInspection_date().substring(0,indexT), R.getCritical_flag(),R.getViolation_description()));
-        }
-        viewPagerSetup();
+//        for (Restaurant R: restaurantQueryList) {
+//            violationsFragmentList.add(ViolationsFragment.getInstance(R.getInspection_date().substring(0,indexT), R.getCritical_flag(),R.getViolation_description()));
+//        }
+        //viewPagerSetup();
 
-        ViolationsAdapter violationsAdapter=new ViolationsAdapter(getFragmentManager(),violationsFragmentList);
+      //  ViolationsAdapter violationsAdapter=new ViolationsAdapter(getFragmentManager(),violationsFragmentList);
 
         ////viewpager for violations
 
@@ -205,7 +204,7 @@ public class DetailsFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        restaurantQueryList.clear();
-        violationsFragmentList.clear();
+        //restaurantQueryList.clear();
+        //violationsFragmentList.clear();
     }
 }

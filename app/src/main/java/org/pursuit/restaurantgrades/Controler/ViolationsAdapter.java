@@ -25,4 +25,10 @@ public class ViolationsAdapter extends FragmentPagerAdapter {
     public int getCount() {
         return fragmentList.size();
     }
+
+    public void setFragmentList(List<ViolationsFragment> fragmentList) {
+        this.fragmentList = fragmentList;
+        notifyDataSetChanged();
+
+    }
 }

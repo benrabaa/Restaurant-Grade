@@ -2,7 +2,6 @@ package org.pursuit.restaurantgrades.network;
 
 import org.pursuit.restaurantgrades.Models.NeighborhoodResponse;
 import org.pursuit.restaurantgrades.Models.Restaurant;
-import org.pursuit.restaurantgrades.Models.RestaurantQueryResponse;
 import org.pursuit.restaurantgrades.Models.RestaurantResponse;
 
 import java.util.List;
@@ -40,7 +39,6 @@ public class ApiClient {
     private void initApis(){
     restaurantDataApi=getRetrofitInstance("https://data.cityofnewyork.us").create(RestaurantDataApi.class);
     neighborhoodApi =getRetrofitInstance("https://data.cityofnewyork.us").create(NeighborhoodApi.class);
-       // https://data.cityofnewyork.us/resource/9w7m-hzhe.json?dba=CLAUDIO%27S&$order=inspection_date%20DESC&$limit=10
 
     }
 
@@ -58,21 +56,56 @@ public class ApiClient {
                         .subscribeOn(Schedulers.io());
 
     }
-    public Call<List<Restaurant>> getRestaurantByName2(String restaurantName,String boroughs){
-        return restaurantDataApi.getRestaurantByName2(restaurantName,boroughs,"inspection_date DESC");
+    public Observable<List<Restaurant>> getRestaurantByBoro(String boroughs){
+        return restaurantDataApi.getRestaurantByBoro(boroughs,"1000")
+                .subscribeOn(Schedulers.computation());
+
+    }
+    public Call<List<Restaurant>> getRestaurantByBoro2(String boroughs){
+        return restaurantDataApi.getRestaurantByBoro2(boroughs,"1000");
     }
     public Observable<List<Restaurant>> getRestaurantByName(String restaurantName,String boroughs){
         return restaurantDataApi.getRestaurantByName(restaurantName,boroughs,"inspection_date DESC")
                 .subscribeOn(Schedulers.io());
     }
 
-    public Observable<List<Restaurant>> getRestaurantZipCodeQueryList(String ZipCode){
-        return restaurantDataApi.getRestaurantZipCodeDataQuery(ZipCode,"inspection_date DESC")
+    public Observable<List<Restaurant>> getRestaurantZipCodeQueryList(String zipCode){
+        return restaurantDataApi.getRestaurantZipCodeDataQuery(zipCode,"inspection_date DESC")
                 .subscribeOn(Schedulers.io());
     }
 
     public Observable<List<Restaurant>> getCuisine(){
         return restaurantDataApi.getCuisine()
                 .subscribeOn(Schedulers.io());
+
     }
+
+    //https://data.cityofnewyork.us/resource/9w7m-hzhe.json?$where=zipcode%20in(%2211372%22,%2211370%22)&$order=inspection_date%20DESC
+
+    public Observable<List<Restaurant>> getRestaurantByAll(String boroughs,String restaurantName, String whereClause,String cuisine){
+
+//        StringBuilder zipCodeStringsBuilder = new StringBuilder();
+//        for (int i = 0; i < zipCodes.size(); i++) {
+//            String zipCode = zipCodes.get(i);
+//
+//            zipCodeStringsBuilder.append("%22");
+//            zipCodeStringsBuilder.append(zipCode);
+//            zipCodeStringsBuilder.append("%22");
+//
+//            if (i < zipCodes.size() - 1) {
+//                zipCodeStringsBuilder.append(",");
+//            }
+//        }
+//
+//        String whereClause = "zipcode%20in(" + zipCodeStringsBuilder.toString() + ")";
+
+        return restaurantDataApi.getRestaurantByAll(boroughs,restaurantName,whereClause,cuisine,"inspection_date DESC","1000000")
+                .subscribeOn(Schedulers.io());
+    }
+
+
+//        public Observable<List<Restaurant>> getRestaurantByAll(Map<String,String> hashmap){
+//        return restaurantDataApi.getRestaurantByAll(hashmap)
+//                .subscribeOn(Schedulers.io());
+//    }
 }
