@@ -74,8 +74,8 @@ public class ApiClient {
                 .subscribeOn(Schedulers.io());
     }
 
-    public Observable<List<Restaurant>> getCuisine(){
-        return restaurantDataApi.getCuisine()
+    public Observable<List<Restaurant>> getAllData(){
+        return restaurantDataApi.getAllData("BROOKLYN","inspection_date DESC","1000000")
                 .subscribeOn(Schedulers.io());
 
     }
@@ -99,7 +99,7 @@ public class ApiClient {
 //
 //        String whereClause = "zipcode%20in(" + zipCodeStringsBuilder.toString() + ")";
 
-        return restaurantDataApi.getRestaurantByAll(boroughs,restaurantName,whereClause,cuisine,"inspection_date DESC","1000000")
+        return restaurantDataApi.getRestaurantByAll(boroughs,restaurantName,whereClause,cuisine,"inspection_date DESC","10000")
                 .subscribeOn(Schedulers.io());
     }
 

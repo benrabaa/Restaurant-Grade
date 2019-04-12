@@ -14,6 +14,7 @@ public class ViolationsAdapter extends FragmentPagerAdapter {
     public ViolationsAdapter(FragmentManager fm,List<ViolationsFragment> fragmentList) {
         super(fm);
         this.fragmentList=fragmentList;
+        notifyDataSetChanged();
     }
 
     @Override
@@ -29,6 +30,7 @@ public class ViolationsAdapter extends FragmentPagerAdapter {
     public void setFragmentList(List<ViolationsFragment> fragmentList) {
         this.fragmentList = fragmentList;
         notifyDataSetChanged();
+
 
     }
 }

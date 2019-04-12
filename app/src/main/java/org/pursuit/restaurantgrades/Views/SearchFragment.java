@@ -20,7 +20,7 @@ import java.util.List;
  * A simple {@link Fragment} subclass.
  */
 public class SearchFragment extends Fragment {
-    private Button resturantNameZipButton,boroughButton;
+    private Button resturantNameZipButton,boroughButton,slideGradeButton;
     private OnFragmentInteractionListener mListener;
     public static final String ARG_PARAM="arrayList";
     private List<String> restaurantResponseList=new ArrayList<>();
@@ -70,6 +70,13 @@ public class SearchFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         resturantNameZipButton=view.findViewById(R.id.restaurant_name_zip_button);
         boroughButton=view.findViewById(R.id.Borough_button);
+        slideGradeButton=view.findViewById(R.id.slide_grade_button);
+        slideGradeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mListener.openSlideGradesFramgment();
+            }
+        });
 
 
         resturantNameZipButton.setOnClickListener(new View.OnClickListener() {

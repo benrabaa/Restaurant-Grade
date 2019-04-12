@@ -48,8 +48,8 @@ public class DataRepository {
 
 
 
-    public Observable<List<Restaurant>> getCuisine(){
-        return apiClient.getCuisine();
+    public Observable<List<Restaurant>> getAllData(){
+        return apiClient.getAllData();
 
     }
 

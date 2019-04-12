@@ -17,36 +17,31 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import java.util.Arrays;
+
 import android.widget.TextView;
 
+import org.pursuit.restaurantgrades.DataStorage;
 import org.pursuit.restaurantgrades.Models.Restaurant;
 import org.pursuit.restaurantgrades.R;
 import org.pursuit.restaurantgrades.network.ApiClient;
 import org.pursuit.restaurantgrades.network.DataRepository;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 
-import io.reactivex.Notification;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
-/**
- * A simple {@link Fragment} subclass.
- */
+
+
 public class SearchByNameFragment extends Fragment {
     private List<String> cuisineList = new ArrayList<>();
     private List<String> restaurantList = new ArrayList<>();
     private List<String> zipCodes = new ArrayList<>();
-    private List<Restaurant> resturantbyboro = new ArrayList<>();
+    private List<Restaurant> allRestaurantsList = new ArrayList<>();
     private CompositeDisposable compositeDisposable;
 
 
@@ -130,8 +125,13 @@ public class SearchByNameFragment extends Fragment {
         String[] Queens = getResources().getStringArray(R.array.Queens);
         String[] Manhattan = getResources().getStringArray(R.array.Manhattan);
         String[] Staten_Island = getResources().getStringArray(R.array.Staten_Island);
+        String[] Cuisines = getResources().getStringArray(R.array.Cuisines);
 
-        ArrayAdapter<String> boroughsAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, Boroughs);
+        ArrayAdapter<String> CuisinesAdapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_item, Cuisines);
+        CuisinesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        cuisinesSpinner.setAdapter(CuisinesAdapter);
+
+        ArrayAdapter<String> boroughsAdapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_item, Boroughs);
         boroughsAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         boroughsSpinner.setAdapter(boroughsAdapter);
 
@@ -169,6 +169,7 @@ public class SearchByNameFragment extends Fragment {
                 }
                 networkConnection();
             }
+
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
@@ -208,7 +209,9 @@ public class SearchByNameFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if (restaurantQueryList.size() == 1) {
-                    mListener.openDetailsFragment(restaurantQueryList.get(0));
+                   // mListener.openDetailsFragment(allRestaurantsList.get(0));
+                    mListener.openRestaurantRecyclerViewFragment(restaurantQueryList);
+
                 } else {
 
                     mListener.openRestaurantRecyclerViewFragment(restaurantQueryList);
@@ -278,7 +281,7 @@ public class SearchByNameFragment extends Fragment {
         mapResultButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mListener.openRestaurantsListGoogleMap(restaurantQueryList);
+                SearchByNameFragment.this.onClick(v);
             }
         });
 
@@ -286,29 +289,34 @@ public class SearchByNameFragment extends Fragment {
 
 
     private void fillCuisineSpinner() {
-
-        Disposable restaurantsListByName =
-                dataRepositoryQuery.getCuisine()
-                        .flatMapIterable(restaurantList -> restaurantList)
-                        .distinct(restaurant -> restaurant.getCuisine_description())
-                        .observeOn(AndroidSchedulers.mainThread())
-                        .toList()
-                        .subscribe(restaurantList -> {
-                                    cuisineList.add("Please select a cuisine");
-                                    for (Restaurant restaurant : restaurantList) {
-                                        cuisineList.add(restaurant.getCuisine_description());
-                                    }
-                                    ArrayAdapter<String> cuisineAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, cuisineList);
-                                    cuisineAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                                    cuisinesSpinner.setAdapter(cuisineAdapter);
-
-                                }, throwable -> throwable.printStackTrace()
-                        );
+////        Disposable restaurantsListByName =
+////                dataRepositoryQuery.getCuisine()
+////                        .flatMapIterable(restaurantList -> restaurantList)
+////                        .distinct(restaurant -> restaurant.getCuisine_description())
+////                        .observeOn(AndroidSchedulers.mainThread())
+////                        .toList()
+////                        .subscribe(restaurantList -> {
+////                                    cuisineList.add("Please select a cuisine");
+////                                    for (Restaurant restaurant : restaurantList) {
+////                                        cuisineList.add(restaurant.getCuisine_description());
+////                                        System.out.println(restaurant.getCuisine_description());
+////                                       // Log.d("cuicine", "fillCuisineSpinner: "+restaurant.getCuisine_description);
+////
+////                                    }
+////                                    java.util.Collections.sort(cuisineList);
+//
+//
+//                            ArrayAdapter<String> cuisineAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, cuisineList);
+//                                    cuisineAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//                                    cuisinesSpinner.setAdapter(cuisineAdapter);
+//
+//                                }, throwable -> throwable.printStackTrace()
+//                        );
     }
 
     public void networkConnection() {
         clearVariable();
-        String cuisine = null;
+        String cuisine=cuisinesSpinner.getSelectedItem().toString();
         String restaurantName = restaurantNameTextView.getEditText().getText().toString().toUpperCase().trim();
         String borough = boroughsSpinner.getSelectedItem().toString().toUpperCase();
         //       if(cuisinesSpinner != null && cuisinesSpinner.getSelectedItem() !=null ) {
@@ -364,68 +372,52 @@ public class SearchByNameFragment extends Fragment {
         if (whereClause.equals("")) {
             whereClause = null;
         }
-//       if (cuisine.isEmpty()) {
-//            cuisine=null;
-//        }
+      if (cuisine.equals("Please select a Cuisine")) {
+            cuisine=null;
+        }
 
 
         if (borough == null && restaurantName == null && whereClause == null) {
             clearVariable();
         } else {
 
-            HashMap<String, Restaurant> restaurantHashMap = new HashMap<>();
 
-            dataRepositoryQuery.getRestaurantByBoro2(borough)
-                    .enqueue(new Callback<List<Restaurant>>() {
-                        @Override
-                        public void onResponse(Call<List<Restaurant>> call, Response<List<Restaurant>> response) {
-                            resturantbyboro.clear();
-                            resturantbyboro = response.body();
-                            for (Restaurant r : response.body()) {
-                                restaurantHashMap.put(r.getCamis(), r);
-                                Log.d("test", "onResponse: " + response.raw().request().url());
-                            }
-                            Log.d("borolist2", "onResponse: before filter " + response.body().size());
-                            Log.d("borolist2 J", "onResponse: after hashmap " + restaurantHashMap.size());
-                        }
+//            Disposable getAllData =
+//                    dataRepositoryQuery.getAllData()
+//                            .doOnNext(list -> System.out.println("JROD 1: " + list.size()))
+//                            .flatMapIterable(restaurantList -> restaurantList)
+//                            .distinct(restaurant -> restaurant.getCamis())
+//                            .filter(restaurant -> filterMethod(restaurant))
+//                            .observeOn(AndroidSchedulers.mainThread())
+//                            .toList()
+//                            .doOnSuccess(list -> System.out.println("JROD 2: " + list.size()))
+//                            .subscribe(
+//                                    restaurantsList -> {
+//                                        allRestaurantsList = restaurantsList;
+//                                        listCounterTextView.setText(allRestaurantsList.size() + "kkk restaurant(s) match your criteria. ");
+//                                    },
+//                                    throwable -> throwable.printStackTrace()
+//                            );
 
-                        @Override
-                        public void onFailure(Call<List<Restaurant>> call, Throwable t) {
-                            Log.d("test", "onFailure: " + t.toString());
-                        }
-                    });
-
-
-            Disposable restaurantsListByBoro =
-                    dataRepositoryQuery.getRestaurantByBoro(borough)
-                            .flatMapIterable(restaurantList -> restaurantList)
-                            .distinct(restaurant -> restaurant.getCamis())
-//                            .distinct(restaurant -> restaurant.getGrade().isEmpty())
-                            .observeOn(AndroidSchedulers.mainThread())
-                            .toList()
-                            .subscribe(restaurantList -> {
-                                        //resturantbyboro.clear();
-                                        resturantbyboro.clear();
-                                        resturantbyboro = restaurantList;
-                                        //Log.d("test", "onResponse: "+ response.raw().request().url());                                    }
-
-                                        Log.d("borolist", "borolistRxBoro: " + resturantbyboro.size());
-                                    }, throwable -> throwable.printStackTrace()
-                            );
 
             Log.d("boro", "networkConnection: " + borough + " " + restaurantName + "" + whereClause + " " + cuisine);
             Disposable restaurantsListByName =
                     dataRepositoryQuery.getRestaurantByAll(borough, restaurantName, whereClause, cuisine)
-                            .doOnNext(list -> System.out.println("JROD 1: " + list.size()))
+                            .doOnNext(list -> {
+                                System.out.println("JROD 1: " + list.size());
+                                allRestaurantsList=list;
+                            })
                             .flatMapIterable(restaurantList -> restaurantList)
                             .distinct(restaurant -> restaurant.getCamis())
+                            .filter(restaurant -> filterMethod(restaurant))
                             .observeOn(AndroidSchedulers.mainThread())
                             .toList()
                             .doOnSuccess(list -> System.out.println("JROD 2: " + list.size()))
                             .subscribe(
                                     restaurantList -> {
+                                        DataStorage.getInstance().setViewHolderRestaurantList(allRestaurantsList);
                                         restaurantQueryList = restaurantList;
-                                        listCounterTextView.setText(restaurantQueryList.size() + " restaurant(s) match your criteria. ");
+                                        listCounterTextView.setText(restaurantList.size() + " restaurant(s) match your criteria. ");
                                     },
                                     throwable -> throwable.printStackTrace()
                             );
@@ -508,8 +500,12 @@ public class SearchByNameFragment extends Fragment {
         listCounterTextView.setText(restaurantQueryList.size() + " restaurant(s) match your criteria. ");
         //cuisineList.clear();
         boroughsSpinner.setSelection(0);
-        //neighborhoodsSpinner.setSelection(0);
+        neighborhoodsSpinner.setSelection(0);
         cuisinesSpinner.setSelection(0);
 
+    }
+
+    private void onClick(View v) {
+        mListener.openRestaurantsListGoogleMap(restaurantQueryList);
     }
 }

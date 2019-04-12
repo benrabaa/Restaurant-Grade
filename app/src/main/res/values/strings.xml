@@ -1,5 +1,74 @@
 <resources>
+
     <string name="app_name">RestaurantGrades</string>
+
+    <string-array name="Cuisines">
+        <item>Please select a Cuisine</item>
+        <item>African</item>
+        <item>American</item>
+        <item>Armenian</item>
+        <item>Asian</item>
+        <item>Australian</item>
+        <item>Bagels/Pretzels</item>
+        <item>Bakery</item>
+        <item>Bangladeshi</item>
+        <item>Barbecue</item>
+        <item>Bottled beverages, including water, sodas, juices, etc.</item>
+        <item>Brazilian</item>
+        <item>CafÃ©/Coffee/Tea</item>
+        <item>Caribbean</item>
+        <item>Chicken</item>
+        <item>Chinese</item>
+        <item>Chinese/Cuban</item>
+        <item>Continental</item>
+        <item>Creole/Cajun</item>
+        <item>CafÃ©/Coffee/Tea</item>
+        <item>Czech</item>
+        <item>Delicatessen</item>
+        <item>Donuts</item>
+        <item>Eastern European</item>
+        <item>Egyptian</item>
+        <item>English</item>
+        <item>Filipino</item>
+        <item>French</item>
+        <item>German</item>
+        <item>Greek</item>
+        <item>Hamburgers</item>
+        <item>Hawaiian</item>
+        <item>Hotdogs/Pretzels</item>
+        <item>Ice Cream, Gelato, Yogurt, Ices</item>
+        <item>Iranian</item>
+        <item>Irish</item>
+        <item>Italian</item>
+        <item>Japanese</item>
+        <item>Jewish/Kosher</item>
+        <item>Juice, Smoothies, Fruit Salads</item>
+        <item>Korean</item>
+        <item>Latin (Cuban, Dominican, Puerto Rican, South &amp; Central American)</item>Other
+        <item>Mediterranean</item>
+        <item>Mexican</item>
+        <item>Middle Eastern</item>
+        <item>Pakistani</item>
+        <item>Peruvian</item>
+        <item>Pizza</item>
+        <item>Pizza/Italian</item>
+        <item>Russian</item>
+        <item>Salads</item>
+        <item>Sandwiches</item>
+        <item>Sandwiches/Salads/Mixed Buffet</item>
+        <item>Scandinavian</item>
+        <item>Seafood</item>
+        <item>Soul Food</item>
+        <item>Spanish</item>
+        <item>Steak</item>
+        <item>Tapas</item>
+        <item>Tex-Mex</item>
+        <item>Thai</item>
+        <item>Turkish</item>
+        <item>Vegetarian</item>
+        <item>Vietnamese/Cambodian/Malaysia</item>
+        <item>Other</item>
+    </string-array>
 
 
     <string-array name="Boroughs">
@@ -124,7 +193,7 @@
 
     <string-array name="Queens">
         <item>Please select a Neighborhood</item>
-        <item >Arverne</item>
+        <item>Arverne</item>
         <item>Astoria Heights</item>
         <item>Astoria</item>
         <item>Auburndale</item>

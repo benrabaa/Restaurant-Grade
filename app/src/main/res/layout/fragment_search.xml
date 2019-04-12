@@ -10,30 +10,58 @@
     <TextView
         android:id="@+id/Search_Fragment"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
         android:text="Search fragment"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/restaurant_name_zip_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="178dp"
+        android:layout_width="0dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="71dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="72dp"
         android:text="Search By Restaurant Name or Zip code"
+        app:layout_constraintBottom_toBottomOf="@+id/Borough_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintTop_toTopOf="@+id/Search_Fragment" />
 
     <Button
         android:id="@+id/Borough_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="63dp"
+        android:layout_width="0dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="223dp"
+        android:layout_marginEnd="52dp"
         android:text="search by Neighborhood and cusions and borghts"
+        app:layout_constraintEnd_toStartOf="@+id/slide_grade_button"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/slide_grade_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="32dp"
+        android:text="About Grade"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Borough_button"
         app:layout_constraintTop_toBottomOf="@+id/restaurant_name_zip_button" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="28dp"
+        android:text="about the developer"
+        app:layout_constraintBaseline_toBaselineOf="@+id/restaurant_name_zip_button"
+        app:layout_constraintEnd_toStartOf="@+id/restaurant_name_zip_button"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

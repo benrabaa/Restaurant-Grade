@@ -28,7 +28,7 @@ import java.util.List;
  */
 public class RestaurantRecyclerViewFragment extends Fragment {
     private static final String LIST_PARAM="ListParam";
-    private ArrayList<Restaurant> restaurantList=new ArrayList<>();
+    private ArrayList<Restaurant> restaurantList;
     private HashMap<String,Restaurant>restaurantHashMap=new HashMap<>();
     private OnFragmentInteractionListener mListener;
 
@@ -78,27 +78,8 @@ public class RestaurantRecyclerViewFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        for (Restaurant restaurant: restaurantList) {
-            if(restaurant.getGrade()!=null){
-                //restaurantHashMap.put(restaurant.getCamis(),restaurant);
-                System.out.println(restaurant.getDba());
-                System.out.println(restaurant.getGrade());
-                System.out.println(restaurant.getInspection_date());
-            }
-        }
-
-//        for (String s: restaurantHashMap.keySet()){
-//            String key =s;
-//            String value = restaurantHashMap.get(key).toString();
-//            System.out.println(key + " " + value);
-//        }
-
-       // System.out.println(restaurantHashMap.get("50008504").getInspection_date());
-
-        Log.d("adapter", "list: "+restaurantList.size());
-
         recyclerView = view.findViewById(R.id.recyclerView);
-        restaurantAdapter = new RestaurantAdapter(restaurantList,mListener);
+        restaurantAdapter = new RestaurantAdapter(restaurantList,mListener,getContext());
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext(), LinearLayoutManager.VERTICAL, false));
         restaurantAdapter.setAdapterRestaurantList(restaurantList);
         recyclerView.setAdapter(restaurantAdapter);

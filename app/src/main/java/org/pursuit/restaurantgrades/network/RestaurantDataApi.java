@@ -22,55 +22,60 @@ public interface RestaurantDataApi {
     Call<RestaurantResponse> getResturentData();
 
 
-   // https://data.cityofnewyork.us/resource/9w7m-hzhe.json?dba=RUBIROSA PIZZA %26 RISTORANTE
+    // https://data.cityofnewyork.us/resource/9w7m-hzhe.json?dba=RUBIROSA PIZZA %26 RISTORANTE
     @GET("/resource/9w7m-hzhe.json?")
     Observable<List<Restaurant>> getRestaurantDataQuery(
             //@Header("Authorization") String apiKey,
-            @Query("dba")String restaurantName,
-          //  @Query("boro") String boroughs,
+            @Query("dba") String restaurantName,
+            //  @Query("boro") String boroughs,
             @Query("$order") String order,
             @Query("$limit") String limit
     );
 
     @GET("/resource/9w7m-hzhe.json?")
     Observable<List<Restaurant>> getRestaurantByBoro(
-             @Query("boro") String boroughs,
+            @Query("boro") String boroughs,
             @Query("$limit") String limit
 
     );
- @GET("/resource/9w7m-hzhe.json?")
- Call<List<Restaurant>> getRestaurantByBoro2(
-         @Nullable @Query("boro") String boroughs,
-         @Query("$limit") String limit
 
- );
+    @GET("/resource/9w7m-hzhe.json?")
+    Call<List<Restaurant>> getRestaurantByBoro2(
+            @Nullable @Query("boro") String boroughs,
+            @Query("$limit") String limit
+
+    );
 
     @GET("/resource/9w7m-hzhe.json?")
     Observable<List<Restaurant>> getRestaurantByName(
-            @Query("dba")String restaurantName,
+            @Query("dba") String restaurantName,
             @Query("boro") String boroughs,
             @Query("$order") String order
     );
 
     @GET("/resource/9w7m-hzhe.json?")
     Observable<List<Restaurant>> getRestaurantZipCodeDataQuery(
-            @Query("zipcode")String zipCode,
+            @Query("zipcode") String zipCode,
             @Query("$order") String order);
 
 
     @GET("/resource/9w7m-hzhe.json?")
-    Observable<List<Restaurant>> getCuisine();
+    Observable<List<Restaurant>> getAllData(
+             @Query("boro") String boroughs,
+            @Query("$order") String order,
+            @Query("$limit") String limit);
 
 
- @GET("/resource/9w7m-hzhe.json?$$app_token=eIJ8Ir9ntP6e4NtZUPqUIQJuC")
- Observable<List<Restaurant>> getRestaurantByAll(
-         @Query("boro") String boroughs,
-         @Query("dba")String restaurantName,
-         @Query(encoded = true, value = "$where") String where,
-         @Query("cuisine_description") String cuisine,
-         @Query("$order") String order,
-         @Query("$limit") String limit
 
- );
+    @GET("/resource/9w7m-hzhe.json?$$app_token=eIJ8Ir9ntP6e4NtZUPqUIQJuC")
+    Observable<List<Restaurant>> getRestaurantByAll(
+            @Query("boro") String boroughs,
+            @Query("dba") String restaurantName,
+            @Query(encoded = true, value = "$where") String where,
+            @Query("cuisine_description") String cuisine,
+            @Query("$order") String order,
+            @Query("$limit") String limit
+
+    );
 
 }

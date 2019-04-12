@@ -73,7 +73,15 @@ public class ViolationsFragment extends Fragment {
         criticalFlagTextView=view.findViewById(R.id.critical_flag_value);
         inspectionDateTextview=view.findViewById(R.id.inspection_date_value);
         violationDescriptiontextView=view.findViewById(R.id.violation_description_value);
+        if (criticalFlag.equals("Critical")){
+            criticalFlagTextView.setTextColor(getResources().getColor(R.color.colorAccent));
+            criticalFlagTextView.setText(criticalFlag);
+            violationDescriptiontextView.setTextColor(getResources().getColor(R.color.colorAccent));
+            violationDescriptiontextView.setText(violationDescription);
+
+        }
         criticalFlagTextView.setText(criticalFlag);
+        violationDescriptiontextView.setText(violationDescription);
         inspectionDateTextview.setText(inspectionDate);
         violationDescriptiontextView.setText(violationDescription);
     }

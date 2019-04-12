@@ -9,6 +9,9 @@ public interface OnFragmentInteractionListener {
     void openSearchByNameFragment();
     void openSearchFragment();
     void openDetailsFragment(Restaurant restaurant);
+    void openFavoritesFragment();
+    void openSlideGradesFramgment();
+
     void openRestaurantRecyclerViewFragment(List<Restaurant> restaurantList);
     void openRestaurantGoogleMap(String location);
     void openRestaurantsListGoogleMap(List<Restaurant> restaurantList);
