@@ -4,64 +4,221 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/inspectionbackground"
     tools:context=".Views.SearchFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/Search_Fragment"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:text="Search fragment"
+
+    <!--<Button-->
+        <!--android:id="@+id/restaurant_name_zip_button"-->
+        <!--android:layout_width="158dp"-->
+        <!--android:layout_height="72dp"-->
+        <!--android:text="Search By Restaurant Name or Zip code"-->
+        <!--tools:layout_editor_absoluteX="245dp"-->
+        <!--tools:layout_editor_absoluteY="651dp" />-->
+
+    <!--<Button-->
+        <!--android:id="@+id/Borough_button"-->
+        <!--android:layout_width="159dp"-->
+        <!--android:layout_height="72dp"-->
+        <!--android:text="search by Neighborhood and cusions and borghts"-->
+        <!--tools:layout_editor_absoluteX="43dp"-->
+        <!--tools:layout_editor_absoluteY="651dp" />-->
+
+    <!--<Button-->
+        <!--android:id="@+id/slide_grade_button"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="About Grade"-->
+        <!--tools:layout_editor_absoluteX="285dp"-->
+        <!--tools:layout_editor_absoluteY="549dp" />-->
+
+    <!--<Button-->
+        <!--android:id="@+id/about_developer_button"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="about the developer"-->
+        <!--tools:layout_editor_absoluteX="40dp"-->
+        <!--tools:layout_editor_absoluteY="549dp" />-->
+
+    <LinearLayout
+        android:id="@+id/logo_linearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="228dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:elevation="6dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/logo_linearLayout2">
 
-    <Button
-        android:id="@+id/restaurant_name_zip_button"
-        android:layout_width="0dp"
-        android:layout_height="72dp"
-        android:layout_marginTop="71dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="72dp"
-        android:text="Search By Restaurant Name or Zip code"
-        app:layout_constraintBottom_toBottomOf="@+id/Borough_button"
+        <ImageView
+            android:id="@+id/logo_image_view1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Restaurant Grading App"
+            android:textColor="@android:color/white"
+            android:textSize="30sp" />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/logo_linearLayout2"
+        android:layout_width="203dp"
+        android:layout_height="129dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:elevation="6dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button"
-        app:layout_constraintTop_toTopOf="@+id/Search_Fragment" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/splash_background_search_page">
 
-    <Button
-        android:id="@+id/Borough_button"
-        android:layout_width="0dp"
-        android:layout_height="72dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="223dp"
-        android:layout_marginEnd="52dp"
-        android:text="search by Neighborhood and cusions and borghts"
-        app:layout_constraintEnd_toStartOf="@+id/slide_grade_button"
+        <ImageView
+            android:id="@+id/logo_image_view2"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Restaurant Grading App"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textSize="15sp" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/menus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="8dp"
+        android:elevation="6dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.633"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo_linearLayout2">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="70dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/restaurant_grading_system_lout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="50dp"
+                android:layout_marginLeft="50dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginBottom="4dp"
+                    android:src="@drawable/about_system" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Restaurant Grading\n System"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/find_restaurant_lout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="50dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginBottom="4dp"
+                    android:src="@drawable/search" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Find Restaurant"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="70dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/about_developer_lout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="130dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginBottom="4dp"
+                    android:src="@drawable/about_dev" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="About Developer"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/splash_background_search_page"
+        android:layout_width="411dp"
+        android:layout_height="911dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/splashscreen"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/slide_grade_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="32dp"
-        android:text="About Grade"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/Borough_button"
-        app:layout_constraintTop_toBottomOf="@+id/restaurant_name_zip_button" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginEnd="28dp"
-        android:text="about the developer"
-        app:layout_constraintBaseline_toBaselineOf="@+id/restaurant_name_zip_button"
-        app:layout_constraintEnd_toStartOf="@+id/restaurant_name_zip_button"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

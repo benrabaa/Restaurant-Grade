@@ -11,6 +11,7 @@ public interface OnFragmentInteractionListener {
     void openDetailsFragment(Restaurant restaurant);
     void openFavoritesFragment();
     void openSlideGradesFramgment();
+    void openAboutMeFragment();
 
     void openRestaurantRecyclerViewFragment(List<Restaurant> restaurantList);
     void openRestaurantGoogleMap(String location);

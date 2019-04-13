@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cardView2"
+    app:cardCornerRadius="10dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Views.ViolationsFragment">
@@ -11,13 +12,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <ImageView
+            android:layout_width="404dp"
+            android:layout_height="263dp"
+            android:scaleType="fitStart"
+            android:src="@drawable/violationbackground"
+            tools:layout_editor_absoluteX="3dp"
+            tools:layout_editor_absoluteY="0dp" />
+
         <TextView
             android:id="@+id/inspection_date_value"
             android:layout_width="163dp"
             android:layout_height="29dp"
             android:layout_marginEnd="28dp"
+            android:fontFamily="sans-serif-condensed-light"
             android:text="Inspection date:"
+            android:textColor="@android:color/black"
             android:textSize="18sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,7 +40,9 @@
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="18dp"
+            android:fontFamily="sans-serif-condensed-medium"
             android:text="Inspection date:"
+            android:textColor="@android:color/black"
             android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@+id/critical_flag_value"
             app:layout_constraintEnd_toStartOf="@+id/inspection_date_value"
@@ -45,8 +59,11 @@
             android:layout_marginTop="4dp"
             android:layout_marginEnd="28dp"
             android:layout_marginBottom="8dp"
+            android:fontFamily="sans-serif-condensed-light"
             android:text="Critical flag "
+            android:textColor="@android:color/black"
             android:textSize="18sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/violation_description"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/cardView2"
@@ -55,28 +72,32 @@
         <TextView
             android:id="@+id/critical_flag"
             android:layout_width="130dp"
-            android:layout_height="23dp"
-            android:layout_marginStart="104dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
+            android:fontFamily="sans-serif-condensed-medium"
             android:text="Critical flag: "
+            android:textColor="@android:color/black"
             android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@+id/violation_description"
             app:layout_constraintEnd_toStartOf="@+id/critical_flag_value"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.955"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/inspection_date"
-            app:layout_constraintVertical_bias="0.428" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/violation_description_value"
             android:layout_width="378dp"
-            android:layout_height="139dp"
+            android:layout_height="154dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
+            android:fontFamily="sans-serif-condensed-light"
             android:text="Violation description:"
+            android:textColor="@android:color/black"
             android:textSize="18sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/violation_description"
@@ -88,7 +109,9 @@
             android:layout_height="28dp"
             android:layout_marginStart="12dp"
             android:layout_marginTop="68dp"
+            android:fontFamily="sans-serif-condensed-medium"
             android:text="Violation description:"
+            android:textColor="@android:color/black"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

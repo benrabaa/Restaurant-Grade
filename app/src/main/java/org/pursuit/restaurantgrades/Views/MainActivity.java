@@ -117,6 +117,14 @@ public class MainActivity extends AppCompatActivity implements OnFragmentInterac
     }
 
     @Override
+    public void openAboutMeFragment() {
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment_container, AboutMeFragment.newInstance())
+                .addToBackStack(null)
+                .commit();
+    }
+
+    @Override
     public void openDetailsFragment(Restaurant restaurant) {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_container, DetailsFragment.newInstance(restaurant))

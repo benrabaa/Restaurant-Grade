@@ -129,6 +129,9 @@ public class RestaurantsMapActivity extends FragmentActivity implements OnMapRea
 
         String restaurantAddress = restaurant.getBuilding() + " " + restaurant.getStreet() + " " + restaurant.getBoro() + ", NY " + restaurant.getZipcode();
 
+        String descripition=restaurant.getDba()+" grade: "+restaurant.getGrade();
+
+
         List<Address> address;
         LatLng p1 = null;
         try {
@@ -138,7 +141,7 @@ public class RestaurantsMapActivity extends FragmentActivity implements OnMapRea
                 Address location = address.get(0);
                 p1 = new LatLng(location.getLatitude(), location.getLongitude());
                 //mMap.addMarker(new MarkerOptions().position(p1).title("Marker in My address - Museum").icon(BitmapDescriptorFactory.fromResource(R.mipmap.test2)));
-                mMap.addMarker(new MarkerOptions().position(p1).title(restaurant.getDba()).zIndex(40));
+                mMap.addMarker(new MarkerOptions().position(p1).title(descripition).zIndex(40));
 
                 // mMap.moveCamera(CameraUpdateFactory.newLatLng(p1));
 

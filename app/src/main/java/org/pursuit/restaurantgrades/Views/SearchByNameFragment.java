@@ -127,12 +127,13 @@ public class SearchByNameFragment extends Fragment {
         String[] Staten_Island = getResources().getStringArray(R.array.Staten_Island);
         String[] Cuisines = getResources().getStringArray(R.array.Cuisines);
 
-        ArrayAdapter<String> CuisinesAdapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_item, Cuisines);
-        CuisinesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter<String> CuisinesAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner_item, Cuisines);
+        CuisinesAdapter.setDropDownViewResource(R.layout.spinner_item_value);
         cuisinesSpinner.setAdapter(CuisinesAdapter);
 
-        ArrayAdapter<String> boroughsAdapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_item, Boroughs);
-        boroughsAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter<String> boroughsAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner_item, Boroughs);
+        //boroughsAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        boroughsAdapter.setDropDownViewResource(R.layout.spinner_item_value);
         boroughsSpinner.setAdapter(boroughsAdapter);
 
         boroughsSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -140,30 +141,30 @@ public class SearchByNameFragment extends Fragment {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 switch (position) {
                     case 1:
-                        ArrayAdapter<String> brooklynAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, Brooklyn);
-                        brooklynAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                        ArrayAdapter<String> brooklynAdapter = new ArrayAdapter<String>(getContext(), R.layout.spinner_item, Brooklyn);
+                        brooklynAdapter.setDropDownViewResource(R.layout.spinner_item_value);
                         neighborhoodsSpinner.setAdapter(brooklynAdapter);
                         break;
 
                     case 2:
-                        ArrayAdapter<String> The_BronxAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, The_Bronx);
-                        The_BronxAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                        ArrayAdapter<String> The_BronxAdapter = new ArrayAdapter<String>(getContext(),R.layout.spinner_item, The_Bronx);
+                        The_BronxAdapter.setDropDownViewResource(R.layout.spinner_item_value);
                         neighborhoodsSpinner.setAdapter(The_BronxAdapter);
                         break;
 
                     case 3:
-                        ArrayAdapter<String> QueensAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, Queens);
-                        QueensAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                        ArrayAdapter<String> QueensAdapter = new ArrayAdapter<String>(getContext(), R.layout.spinner_item, Queens);
+                        QueensAdapter.setDropDownViewResource(R.layout.spinner_item_value);
                         neighborhoodsSpinner.setAdapter(QueensAdapter);
                         break;
                     case 4:
-                        ArrayAdapter<String> ManhattanAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, Manhattan);
-                        ManhattanAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                        ArrayAdapter<String> ManhattanAdapter = new ArrayAdapter<String>(getContext(), R.layout.spinner_item, Manhattan);
+                        ManhattanAdapter.setDropDownViewResource(R.layout.spinner_item_value);
                         neighborhoodsSpinner.setAdapter(ManhattanAdapter);
                         break;
                     case 5:
-                        ArrayAdapter<String> Staten_IslandAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, Staten_Island);
-                        Staten_IslandAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                        ArrayAdapter<String> Staten_IslandAdapter = new ArrayAdapter<String>(getContext(), R.layout.spinner_item, Staten_Island);
+                        Staten_IslandAdapter.setDropDownViewResource(R.layout.spinner_item_value);
                         neighborhoodsSpinner.setAdapter(Staten_IslandAdapter);
                         break;
                 }
@@ -319,7 +320,6 @@ public class SearchByNameFragment extends Fragment {
         String cuisine=cuisinesSpinner.getSelectedItem().toString();
         String restaurantName = restaurantNameTextView.getEditText().getText().toString().toUpperCase().trim();
         String borough = boroughsSpinner.getSelectedItem().toString().toUpperCase();
-        //       if(cuisinesSpinner != null && cuisinesSpinner.getSelectedItem() !=null ) {
         if (cuisinesSpinner.getSelectedItemPosition() >= 1) {
             cuisine = cuisinesSpinner.getSelectedItem().toString();
         }
@@ -399,7 +399,7 @@ public class SearchByNameFragment extends Fragment {
 //                                    throwable -> throwable.printStackTrace()
 //                            );
 
-
+            clearVariable();
             Log.d("boro", "networkConnection: " + borough + " " + restaurantName + "" + whereClause + " " + cuisine);
             Disposable restaurantsListByName =
                     dataRepositoryQuery.getRestaurantByAll(borough, restaurantName, whereClause, cuisine)
@@ -463,6 +463,8 @@ public class SearchByNameFragment extends Fragment {
 
     private void clearVariable() {
         restaurantQueryList.clear();
+        restaurantList.clear();
+        listCounterTextView.setText(restaurantList.size() + " restaurant(s) match your criteria. ");
         zipCodes = null;
     }
 
