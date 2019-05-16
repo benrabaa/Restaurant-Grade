@@ -15,6 +15,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class ApiClient {
+
+
     private static Retrofit retrofitInstance;
     private String baseUrl;
     private RestaurantDataApi restaurantDataApi;

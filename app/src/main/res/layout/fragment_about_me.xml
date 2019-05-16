@@ -30,7 +30,7 @@
                 android:layout_marginBottom="6dp"
                 android:fontFamily="sans-serif-condensed-medium"
                 android:gravity="center_horizontal"
-                android:text="Uniqe Tech \n  Mobile &amp; Web Apps Development"
+                android:text="Mohamed Ben \n  Android Developer"
                 android:textAlignment="center"
                 android:textColor="@android:color/black"
                 android:textSize="24sp"

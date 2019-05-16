@@ -82,7 +82,6 @@ public class DetailsFragment extends Fragment {
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
-        Log.d(TAG, "onCreate: ");
         super.onCreate(savedInstanceState);
         restaurant = getArguments().getParcelable(ARG_PARAM1);
         violationsAdapter = new ViolationsAdapter(getChildFragmentManager(),violationsFragmentList );
