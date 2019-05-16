@@ -1,19 +1,90 @@
 <resources>
+
     <string name="app_name">RestaurantGrades</string>
+
+    <string-array name="Cuisines">
+        <item>Please select a Cuisine</item>
+        <item>African</item>
+        <item>American</item>
+        <item>Armenian</item>
+        <item>Asian</item>
+        <item>Australian</item>
+        <item>Bagels/Pretzels</item>
+        <item>Bakery</item>
+        <item>Bangladeshi</item>
+        <item>Barbecue</item>
+        <item>Bottled beverages, including water, sodas, juices, etc.</item>
+        <item>Brazilian</item>
+        <item>CafÃ©/Coffee/Tea</item>
+        <item>Caribbean</item>
+        <item>Chicken</item>
+        <item>Chinese</item>
+        <item>Chinese/Cuban</item>
+        <item>Continental</item>
+        <item>Creole/Cajun</item>
+        <item>CafÃ©/Coffee/Tea</item>
+        <item>Czech</item>
+        <item>Delicatessen</item>
+        <item>Donuts</item>
+        <item>Eastern European</item>
+        <item>Egyptian</item>
+        <item>English</item>
+        <item>Filipino</item>
+        <item>French</item>
+        <item>German</item>
+        <item>Greek</item>
+        <item>Hamburgers</item>
+        <item>Hawaiian</item>
+        <item>Hotdogs/Pretzels</item>
+        <item>Ice Cream, Gelato, Yogurt, Ices</item>
+        <item>Iranian</item>
+        <item>Irish</item>
+        <item>Italian</item>
+        <item>Japanese</item>
+        <item>Jewish/Kosher</item>
+        <item>Juice, Smoothies, Fruit Salads</item>
+        <item>Korean</item>
+        <item>Latin (Cuban, Dominican, Puerto Rican, South &amp; Central American)</item>Other
+        <item>Mediterranean</item>
+        <item>Mexican</item>
+        <item>Middle Eastern</item>
+        <item>Pakistani</item>
+        <item>Peruvian</item>
+        <item>Pizza</item>
+        <item>Pizza/Italian</item>
+        <item>Russian</item>
+        <item>Salads</item>
+        <item>Sandwiches</item>
+        <item>Sandwiches/Salads/Mixed Buffet</item>
+        <item>Scandinavian</item>
+        <item>Seafood</item>
+        <item>Soul Food</item>
+        <item>Spanish</item>
+        <item>Steak</item>
+        <item>Tapas</item>
+        <item>Tex-Mex</item>
+        <item>Thai</item>
+        <item>Turkish</item>
+        <item>Vegetarian</item>
+        <item>Vietnamese/Cambodian/Malaysia</item>
+        <item>Other</item>
+    </string-array>
 
 
     <string-array name="Boroughs">
+        <item>Please select a Borough</item>
         <item>Brooklyn</item>
-        <item>The Bronx</item>
+        <item>Bronx</item>
         <item>Queens</item>
         <item>Manhattan</item>
         <item>Staten Island</item>
     </string-array>
 
     <string-array name="Brooklyn">
+        <item>Please select a Neighborhood</item>
         <item>Bath Beach</item>
         <item>Bay Ridge</item>
-        <item>Bedford-Stuyvesant</item>
+        <item>Bedford_Stuyvesant</item>
         <item>Bensonhurst</item>
         <item>Boerum Hill</item>
         <item>Borough Park</item>
@@ -80,7 +151,1656 @@
         <item>Windsor Terrace</item>
     </string-array>
 
+
+    <string-array name="The_Bronx">
+        <item>Please select a Neighborhood</item>
+        <item>Baychester</item>
+        <item>Coop City</item>
+        <item>Bedford Park</item>
+        <item>Belmont</item>
+        <item>Bronxdale</item>
+        <item>Castle Hill</item>
+        <item>City Island</item>
+        <item>Concourse Village</item>
+        <item>Grand Concourse</item>
+        <item>Morrisania</item>
+        <item>Country Club</item>
+        <item>Fieldston</item>
+        <item>Fordham</item>
+        <item>Hunts Point</item>
+        <item>Kingsbridge</item>
+        <item>Kingsbridge Heights</item>
+        <item>Melrose</item>
+        <item>Morris Heights</item>
+        <item>Morris Park</item>
+        <item>Mott Haven</item>
+        <item>Parkchester</item>
+        <item>Pelham Bay</item>
+        <item>Pelham Gardens</item>
+        <item>Pelham Parkway</item>
+        <item>Port Morris</item>
+        <item>Riverdale</item>
+        <item>Soundview</item>
+        <item>Throgs Neck</item>
+        <item>Tremont</item>
+        <item>University Heights</item>
+        <item>Wakefield</item>
+        <item>Williamsbridge</item>
+        <item>Woodlawn</item>
+
+    </string-array>
+
+
+    <string-array name="Queens">
+        <item>Please select a Neighborhood</item>
+        <item>Arverne</item>
+        <item>Astoria Heights</item>
+        <item>Astoria</item>
+        <item>Auburndale</item>
+        <item>Bayside</item>
+        <item>Bellerose</item>
+        <item>Breezy Point</item>
+        <item>Bay Terrace</item>
+        <item>Bayswater</item>
+        <item>Beechhurst</item>
+        <item>Bellaire</item>
+        <item>Belle Harbor</item>
+        <item>Briarwood</item>
+        <item>Broad Channel</item>
+        <item>Douglaston</item>
+        <item>Dutch Kills</item>
+        <item>Cambria Heights</item>
+        <item>College Point</item>
+        <item>Corona</item>
+        <item>Ditmars</item>
+        <item>Edgemere</item>
+        <item>Far Rockaway</item>
+        <item>East Elmhurst</item>
+        <item>Elmhurst</item>
+        <item>Far Rockaway</item>
+        <item>Floral Park</item>
+        <item>Flushing</item>
+        <item>Forest Hills</item>
+        <item>Fresh Meadows</item>
+        <item>Fresh Pond</item>
+        <item>Glendale</item>
+        <item>Hollis Hills</item>
+        <item>Hollis</item>
+        <item>Glen Oaks</item>
+        <item>Hollis</item>
+        <item>Howard Beach</item>
+        <item>Jamaica Estates</item>
+        <item>Jackson Heights</item>
+        <item>Jamaica Hills</item>
+        <item>Kew Gardens Hills</item>
+        <item>Jamaica</item>
+        <item>Kew Gardens</item>
+        <item>Little Neck</item>
+        <item>Laurelton</item>
+        <item>LeFrak City</item>
+        <item>Linden Hill</item>
+        <item>Lindenwood</item>
+        <item>Little Neck</item>
+        <item>Malba</item>
+        <item>Meadowmere</item>
+        <item>Murray Hill</item>
+        <item>Neponsit</item>
+        <item>Long Island City</item>
+        <item>Maspeth</item>
+        <item>New Hyde Park</item>
+        <item>North Shore Towers</item>
+        <item>Middle Village</item>
+        <item>Oakland Gardens</item>
+        <item>Ozone Park</item>
+        <item>Pomonok</item>
+        <item>Queensboro Hill</item>
+        <item>Queensbridge</item>
+        <item>Queens Village</item>
+        <item>Rego Park</item>
+        <item>Richmond Hill</item>
+        <item>Ridgewood</item>
+        <item>Rego Park</item>
+        <item>Rochdale Village</item>
+        <item>Rockaway Beach</item>
+        <item>South Jamaica</item>
+        <item>Rockaway Park</item>
+        <item>Rosedale</item>
+        <item>Saint Albans</item>
+        <item>South Ozone Park</item>
+        <item>South Richmond Hill</item>
+        <item>Springfield Gardens</item>
+        <item>Sunnyside Gardens</item>
+        <item>Tudor Village</item>
+        <item>Sunnyside</item>
+        <item>Willets_Point</item>
+        <item>Whitestone</item>
+        <item>Woodhaven</item>
+        <item>Woodside</item>
+    </string-array>
+
+    <string-array name="Manhattan">
+        <item>Please select a Neighborhood</item>
+        <item>Battery Park City</item>
+        <item>Bowery</item>
+        <item>Carnegie Hill</item>
+        <item>Central Park</item>
+        <item>Chelsea</item>
+        <item>Chinatown</item>
+        <item>Civic Center</item>
+        <item>East Harlem</item>
+        <item>Financial District</item>
+        <item>Flatiron</item>
+        <item>Garment District</item>
+        <item>Gramercy Park</item>
+        <item>Greenwich Village</item>
+        <item>East Village</item>
+        <item>West Village</item>
+        <item>Hamilton Heights</item>
+        <item>Hells Kitchen/Clinton</item>
+        <item>Harlem</item>
+        <item>Inwood</item>
+        <item>Kips Bay</item>
+        <item>Lenox Hill</item>
+        <item>Little Italy</item>
+        <item>Lower Eastside</item>
+        <item>Madison Square</item>
+        <item>Manhattan Valley</item>
+        <item>Meatpacking District</item>
+        <item>Midtown</item>
+        <item>Morningside Heights</item>
+        <item>Murray Hill</item>
+        <item>NoHo</item>
+        <item>NoLita</item>
+        <item>Roosevelt Island</item>
+        <item>SoHo</item>
+        <item>Stuyvesant Town</item>
+        <item>Sutton Place</item>
+        <item>Times Square</item>
+        <item>Tribeca</item>
+        <item>Turtle Bay</item>
+        <item>Upper Eastside</item>
+        <item>Upper Westside</item>
+        <item>Washington Heights</item>
+        <item>Yorkville</item>
+
+    </string-array>
+
+
+    <string-array name="Staten_Island">
+        <item>Please select a Neighborhood</item>
+        <item>Annadale</item>
+        <item>Arden Heights</item>
+        <item>Arrochar</item>
+        <item>Bay Street</item>
+        <item>Bulls Head</item>
+        <item>Castleton Corners</item>
+        <item>Charleston</item>
+        <item>Clifton</item>
+        <item>Dongan Hills</item>
+        <item>Eltingville</item>
+        <item>Emerson Hill</item>
+        <item>Graniteville</item>
+        <item>Grant City</item>
+        <item>Grasmere</item>
+        <item>Concord</item>
+        <item>Great Kills</item>
+        <item>Grymes Hill</item>
+        <item>Huguenot</item>
+        <item>Livingston</item>
+        <item>Manor Heights</item>
+        <item>Mariners Harbor</item>
+        <item>Midland Beach</item>
+        <item>New Brighton</item>
+        <item>New Dorp</item>
+        <item>New Dorp Beach</item>
+        <item>New Springville</item>
+        <item>Oakwood Beach</item>
+        <item>Pleasant Plains</item>
+        <item>Port Richmond</item>
+        <item>Port Ivory</item>
+        <item>Princes Bay</item>
+        <item>Richmondtown</item>
+        <item>Rosebank</item>
+        <item>Rossville</item>
+        <item>Shore Acres</item>
+        <item>Silver Lake</item>
+        <item>South Beach</item>
+        <item>St George</item>
+        <item>Stapleton</item>
+        <item>Sunnyside</item>
+        <item>Todt Hill</item>
+        <item>Tompkinsville</item>
+        <item>Tottenville</item>
+        <item>Travis</item>
+        <item>West New Brighton</item>
+        <item>Westerleigh</item>
+        <item>Willowbrook</item>
+        <item>Woodrow</item>
+    </string-array>
+
+    <!-- +++++++++++++    Brooklyn Neighborhood zipCodes  +++++++++++++++++++++++++++++++++++++++++ -->
+
+    <string-array name="Bath_Beach">
+        <item>11214</item>
+    </string-array>
+
+    <string-array name="Bay_Ridge">
+        <item>11209</item>
+    </string-array>
+
+    <string-array name="Bedford_Stuyvesant">
+        <item>11205</item>
+        <item>11206</item>
+        <item>11216</item>
+        <item>11221</item>
+        <item>11233</item>
+
+    </string-array>
+
+    <string-array name="Boerum_Hill">
+        <item>11201</item>
+        <item>11217</item>
+    </string-array>
+
+    <string-array name="Bensonhurst">
+        <item>11204</item>
+        <item>11214</item>
+    </string-array>
+
+    <string-array name="Borough_Park">
+        <item>11219</item>
+    </string-array>
+
+    <string-array name="Brighton_Beach">
+        <item>11235</item>
+    </string-array>
+
+    <string-array name="Brooklyn_College">
+        <item>11210</item>
+    </string-array>
+
+    <string-array name="Brooklyn_Heights">
+        <item>11201</item>
+    </string-array>
+
+    <string-array name="Brooklyn_Navy_Yard">
+        <item>11205</item>
+
+    </string-array>
+
+    <string-array name="Brower_Park">
+        <item>11213</item>
+
+    </string-array>
+
+    <string-array name="Brownsville">
+        <item>11212</item>
+
+    </string-array>
+    <string-array name="Bushwick">
+        <item>11221</item>
+        <item>11237</item>
+
+    </string-array>
+
+
+    <string-array name="Canarsie">
+        <item>11236</item>
+    </string-array>
+
+
+    <string-array name="Carroll_Gardens">
+        <item>11231</item>
+    </string-array>
+
+    <string-array name="Clinton_Hill">
+        <item>11205</item>
+    </string-array>
+
+    <string-array name="Cobble_Hill">
+        <item>11201</item>
+    </string-array>
+
+    <string-array name="Columbia_Heights">
+        <item>11231</item>
+    </string-array>
+
+    <string-array name="Coney_Island">
+        <item>11224</item>
+    </string-array>
+
+    <string-array name="Crown_Heights">
+        <item>11225</item>
+        <item>11213</item>
+    </string-array>
+
+    <string-array name="Cypress_Hills">
+        <item>11208</item>
+    </string-array>
+
+    <string-array name="Ditmas_Park">
+        <item>11218</item>
+    </string-array>
+
+    <string-array name="Downtown_Brooklyn">
+        <item>11201</item>
+    </string-array>
+
+    <string-array name="DUMBO">
+        <item>11201</item>
+    </string-array>
+
+    <string-array name="Dyker_Heights">
+        <item>11228</item>
+    </string-array>
+
+    <string-array name="East_Flatbush">
+        <item>11203</item>
+        <item>11212</item>
+    </string-array>
+
+    <string-array name="East_New_York">
+        <item>11207</item>
+    </string-array>
+
+    <string-array name="East_Williamsburg">
+        <item>11206</item>
+        <item>11211</item>
+        <item>11237</item>
+        <item>11222</item>
+    </string-array>
+
+    <string-array name="Flatbush">
+        <item>11226</item>
+        <item>11210</item>
+    </string-array>
+
+    <string-array name="Flatlands">
+        <item>11234</item>
+    </string-array>
+
+    <string-array name="Fulton_Ferry_District">
+        <item>11201</item>
+    </string-array>
+
+    <string-array name="Fort_Greene">
+        <item>11205</item>
+    </string-array>
+
+    <string-array name="Farragut">
+        <item>11203</item>
+        <item>11210</item>
+    </string-array>
+
+
+    <string-array name="Fort_Hamilton">
+        <item>11209</item>
+    </string-array>
+
+    <string-array name="Gowanus">
+        <item>11217</item>
+    </string-array>
+
+    <string-array name="Gravesend">
+        <item>11223</item>
+    </string-array>
+
+    <string-array name="Greenpoint">
+        <item>11222</item>
+    </string-array>
+
+    <string-array name="Gerritsen_Beach">
+        <item>11229</item>
+        <item>11235</item>
+    </string-array>
+
+    <string-array name="Greenwood">
+        <item>11232</item>
+    </string-array>
+
+    <string-array name="Homecrest">
+        <item>11223</item>
+        <item>11229</item>
+    </string-array>
+
+    <string-array name="Industry_City_Bush_Terminal">
+        <item>11232</item>
+    </string-array>
+
+    <string-array name="Jamaica_Bay">
+        <item>11236</item>
+    </string-array>
+
+    <string-array name="Kensington">
+        <item>11218</item>
+        <item>11223</item>
+        <item>11229</item>
+    </string-array>
+
+    <string-array name="Kings_Highway">
+        <item>11229</item>
+    </string-array>
+
+    <string-array name="Kings_Plaza">
+        <item>11234</item>
+    </string-array>
+
+    <string-array name="Madison">
+        <item>11229</item>
+    </string-array>
+
+    <string-array name="Mapleton">
+        <item>11204</item>
+    </string-array>
+
+    <string-array name="Manhattan_Beach">
+        <item>11235</item>
+    </string-array>
+
+    <string-array name="Marine_Park">
+        <item>11234</item>
+    </string-array>
+
+    <string-array name="Midwood">
+        <item>11230</item>
+    </string-array>
+
+    <string-array name="Mill_Basin">
+        <item>11234</item>
+    </string-array>
+
+    <string-array name="New_Lots">
+        <item>11236</item>
+        <item>11207</item>
+        <item>11208</item>
+    </string-array>
+
+    <string-array name="Park_Slope">
+        <item>11215</item>
+        <item>11217</item>
+    </string-array>
+
+    <string-array name="Parkville">
+        <item>11204</item>
+    </string-array>
+
+    <string-array name="Prospect_Park">
+        <item>11215</item>
+        <item>11217</item>
+    </string-array>
+
+    <string-array name="Prospect_Heights">
+        <item>11238</item>
+    </string-array>
+
+    <string-array name="Prospect_Lefferts_Gardens">
+        <item>11225</item>
+    </string-array>
+
+    <string-array name="Northeast_Flatbush">
+        <item>11203</item>
+    </string-array>
+
+    <string-array name="Ocean_Hill">
+        <item>11233</item>
+    </string-array>
+
+    <string-array name="Old_Mill_Basin">
+        <item>11234</item>
+    </string-array>
+
+
+    <string-array name="Prospect_Park_South">
+        <item>11226</item>
+    </string-array>
+
+    <string-array name="Red_Hook">
+        <item>11231</item>
+    </string-array>
+
+    <string-array name="Sea_Gate">
+        <item>11224</item>
+    </string-array>
+
+    <string-array name="Sheepshead_Bay">
+        <item>11235</item>
+    </string-array>
+
+    <string-array name="Starrett_City">
+        <item>11239</item>
+    </string-array>
+
+    <string-array name="Stuyvesant_Heights">
+        <item>11233</item>
+    </string-array>
+
+    <string-array name="Sunset_Park">
+        <item>11220</item>
+        <item>11232</item>
+    </string-array>
+
+    <string-array name="Vanderveer">
+        <item>11210</item>
+    </string-array>
+
+    <string-array name="Vinegar_Hill">
+        <item>11201</item>
+    </string-array>
+
+    <string-array name="Weeksville">
+        <item>11213</item>
+    </string-array>
+
+    <string-array name="Williamsburg">
+        <item>11206</item>
+        <item>11211</item>
+        <item>11249</item>
+    </string-array>
+
+    <string-array name="Windsor_Terrace">
+        <item>11215</item>
+        <item>11218</item>
+    </string-array>
+
+    <!-- +++++++++++++    Bronx Neighborhood zipCodes  +++++++++++++++++++++++++++++++++++++++++ -->
+
+    <string-array name="Baychester">
+        <item>10469</item>
+    </string-array>
+
+    <string-array name="Coop_City">
+        <item>10475</item>
+    </string-array>
+
+    <string-array name="Bedford_Park">
+        <item>10458</item>
+        <item>10468</item>
+    </string-array>
+
+    <string-array name="Belmont">
+        <item>10457</item>
+        <item>10458</item>
+        <item>10460</item>
+    </string-array>
+
+    <string-array name="Bronxdale">
+        <item>10462</item>
+        <item>10469</item>
+        <item>10467</item>
+    </string-array>
+
+    <string-array name="Castle_Hill">
+        <item>10462</item>
+        <item>10473</item>
+        <item>10472</item>
+    </string-array>
+
+    <string-array name="City_Island">
+        <item>10464</item>
+    </string-array>
+
+    <string-array name="Concourse_Village">
+        <item>10451</item>
+        <item>10456</item>
+    </string-array>
+
+    <string-array name="Grand_Concourse">
+        <item>10451</item>
+        <item>10452</item>
+    </string-array>
+
+    <string-array name="Morrisania">
+        <item>10456</item>
+        <item>10451</item>
+        <item>10459</item>
+    </string-array>
+
+    <string-array name="Country_Club">
+        <item>10465</item>
+    </string-array>
+
+    <string-array name="Fieldston">
+        <item>10471</item>
+    </string-array>
+
+    <string-array name="Fordham">
+        <item>10453</item>
+        <item>10457</item>
+        <item>10458</item>
+        <item>10468</item>
+    </string-array>
+
+    <string-array name="Hunts_Point">
+        <item>10474</item>
+    </string-array>
+
+    <string-array name="Kingsbridge">
+        <item>10463</item>
+    </string-array>
+
+    <string-array name="Kingsbridge_Heights">
+        <item>10463</item>
+        <item>10468</item>
+    </string-array>
+
+    <string-array name="Melrose">
+        <item>10451</item>
+        <item>10455</item>
+    </string-array>
+
+    <string-array name="Morris_Heights">
+        <item>10452</item>
+        <item>10453</item>
+    </string-array>
+
+    <string-array name="Morris_Park">
+        <item>10461</item>
+        <item>10462</item>
+    </string-array>
+
+    <string-array name="Mott_Haven">
+        <item>10451</item>
+        <item>10454</item>
+        <item>10455</item>
+    </string-array>
+
+    <string-array name="Parkchester">
+        <item>10462</item>
+    </string-array>
+
+    <string-array name="Pelham_Bay">
+        <item>10461</item>
+    </string-array>
+
+    <string-array name="Pelham_Gardens">
+        <item>10469</item>
+    </string-array>
+
+    <string-array name="Pelham_Parkway">
+        <item>10461</item>
+        <item>10462</item>
+    </string-array>
+
+    <string-array name="Port_Morris">
+        <item>10454</item>
+    </string-array>
+
+    <string-array name="Riverdale">
+        <item>10463</item>
+        <item>10471</item>
+    </string-array>
+
+    <string-array name="Soundview">
+        <item>10472</item>
+        <item>10473</item>
+    </string-array>
+
+    <string-array name="Throgs_Neck">
+        <item>10465</item>
+    </string-array>
+
+    <string-array name="Tremont">
+        <item>10453</item>
+        <item>10457</item>
+    </string-array>
+
+    <string-array name="University_Heights">
+        <item>10453</item>
+        <item>10468</item>
+    </string-array>
+
+    <string-array name="Wakefield">
+        <item>10467</item>
+        <item>10466</item>
+        <item>10470</item>
+    </string-array>
+
+    <string-array name="Williamsbridge">
+        <item>10466</item>
+        <item>10467</item>
+        <item>10469</item>
+    </string-array>
+
+    <string-array name="Woodlawn">
+        <item> 10470 </item>
+    </string-array>
+
+    <!-- +++++++++++++    Queens Neighborhood zipCodes  +++++++++++++++++++++++++++++++++++++++++ -->
+
+    <string-array name="Arverne">
+        <item>11692</item>
+    </string-array>
+
+    <string-array name="Astoria_Heights">
+        <item>11370</item>
+    </string-array>
+
+    <string-array name="Astoria">
+        <item>11102</item>
+        <item>11103</item>
+        <item>11105</item>
+        <item>11106</item>
+    </string-array>
+
+    <string-array name="Auburndale">
+        <item>11358</item>
+    </string-array>
+
+    <string-array name="Bay_Terrace">
+        <item>11360</item>
+    </string-array>
+
+    <string-array name="Bayside">
+        <item>11359</item>
+        <item>11360</item>
+        <item>11361</item>
+    </string-array>
+
+    <string-array name="Bayswater">
+        <item>11691</item>
+    </string-array>
+
+    <string-array name="Beechhurst">
+        <item>11357</item>
+    </string-array>
+
+    <string-array name="Bellaire">
+        <item>11427</item>
+        <item>11428</item>
+        <item>11429</item>
+    </string-array>
+
+    <string-array name="Belle_Harbor">
+        <item>11694</item>
+    </string-array>
+
+    <string-array name="Bellerose">
+        <item>11426</item>
+    </string-array>
+
+    <string-array name="Blissville">
+        <item>11101</item>
+    </string-array>
+
+    <string-array name="Breezy_Point">
+        <item>11697</item>
+    </string-array>
+
+    <string-array name="Briarwood">
+        <item>11435</item>
+    </string-array>
+
+    <string-array name="Broad_Channel">
+        <item>11693</item>
+    </string-array>
+
+    <string-array name="Cambria_Heights">
+        <item>11411</item>
+    </string-array>
+
+    <string-array name="College_Point">
+        <item>11356</item>
+    </string-array>
+
+    <string-array name="Corona">
+        <item>11368</item>
+    </string-array>
+
+    <string-array name="Ditmars">
+        <item>11005</item>
+        <item>11370</item>
+    </string-array>
+
+    <string-array name="Douglaston">
+        <item>11362</item>
+        <item>11363</item>
+    </string-array>
+
+    <string-array name="Dutch_Kills">
+        <item>11101</item>
+    </string-array>
+
+    <string-array name="East_Elmhurst">
+        <item>11369</item>
+        <item>11370</item>
+        <item>11371</item>
+    </string-array>
+
+    <string-array name="Edgemere">
+        <item>11690</item>
+    </string-array>
+
+    <string-array name="Elmhurst">
+        <item>11373</item>
+    </string-array>
+
+    <string-array name="Far_Rockaway">
+        <item>11096</item>
+        <item>11690</item>
+        <item>11691</item>
+        <item>11692</item>
+        <item>11693</item>
+        <item>11694</item>
+        <item>11695</item>
+        <item>11697</item>
+    </string-array>
+
+    <string-array name="Floral_Park">
+        <item>11001</item>
+        <item>11002</item>
+        <item>11003</item>
+        <item>11004</item>
+        <item>11005</item>
+    </string-array>
+
+    <string-array name="Flushing">
+        <item>11351</item>
+        <item>11352</item>
+        <item>11354</item>
+        <item>11355</item>
+        <item>11356</item>
+        <item>11357</item>
+        <item>11358</item>
+        <item>11359</item>
+        <item>11360</item>
+        <item>11361</item>
+        <item>11362</item>
+        <item>11363</item>
+        <item>11364</item>
+        <item>11365</item>
+        <item>11366</item>
+        <item>11367</item>
+        <item>11368</item>
+        <item>11369</item>
+        <item>11370</item>
+        <item>11371</item>
+        <item>11372</item>
+        <item>11373</item>
+        <item>11374</item>
+        <item>11375</item>
+        <item>11377</item>
+        <item>11378</item>
+        <item>11379</item>
+        <item>11380</item>
+        <item>11381</item>
+        <item>11385</item>
+        <item>11386</item>
+        <item>11390</item>
+    </string-array>
+
+    <string-array name="Forest_Hills">
+        <item>11375</item>
+    </string-array>
+
+    <string-array name="Fresh_Meadows">
+        <item>11365</item>
+        <item>11366</item>
+    </string-array>
+
+    <string-array name="Fresh_Pond">
+        <item>11385</item>
+    </string-array>
+
+    <string-array name="Glen_Oaks">
+        <item>11004</item>
+    </string-array>
+
+    <string-array name="Glendale">
+        <item>11385</item>
+    </string-array>
+
+    <string-array name="Hollis_Hills">
+        <item>11364</item>
+        <item>11427</item>
+    </string-array>
+
+    <string-array name="Hollis">
+        <item>11423</item>
+    </string-array>
+
+    <string-array name="Howard_Beach">
+        <item>11414</item>
+    </string-array>
+
+    <string-array name="Jackson_Heights">
+        <item>11372</item>
+        <item>11370</item>
+    </string-array>
+
+    <string-array name="Jamaica">
+        <item>11405</item>
+        <item>11411</item>
+        <item>11412</item>
+        <item>11413</item>
+        <item>11414</item>
+        <item>11415</item>
+        <item>11416</item>
+        <item>11417</item>
+        <item>11418</item>
+        <item>11419</item>
+        <item>11420</item>
+        <item>11421</item>
+        <item>11422</item>
+        <item>11423</item>
+        <item>11424</item>
+        <item>11425</item>
+        <item>11426</item>
+        <item>11427</item>
+        <item>11428</item>
+        <item>11429</item>
+        <item>11430</item>
+        <item>11431</item>
+        <item>11432</item>
+        <item>11433</item>
+        <item>11434</item>
+        <item>11435</item>
+        <item>11436</item>
+        <item>11439</item>
+        <item>11451</item>
+        <item>11499</item>
+    </string-array>
+
+    <string-array name="Jamaica_Estates">
+        <item>11423</item>
+        <item>11432</item>
+        <item>11366</item>
+        <item>11439</item>
+        <item>11427</item>
+        <item>11428</item>
+    </string-array>
+
+    <string-array name="Jamaica_Hills">
+        <item>11432</item>
+        <item>11405</item>
+    </string-array>
+
+    <string-array name="Kew_Gardens_Hills">
+        <item>11367</item>
+    </string-array>
+
+    <string-array name="Kew_Gardens">
+        <item>11415</item>
+    </string-array>
+
+    <string-array name="Laurelton">
+        <item>11413</item>
+    </string-array>
+
+    <string-array name="LeFrak_City">
+        <item>11368</item>
+    </string-array>
+
+    <string-array name="Linden_Hill">
+        <item>11354</item>
+    </string-array>
+
+    <string-array name="Lindenwood">
+        <item>11414</item>
+    </string-array>
+
+    <string-array name="Long_Island_City">
+        <item>11101</item>
+        <item>11102</item>
+        <item>11103</item>
+        <item>11104</item>
+        <item>11105</item>
+        <item>11106</item>
+        <item>11109</item>
+        <item>11120</item>
+        <item>10044</item>
+        <item>11222</item>
+    </string-array>
+
+    <string-array name="Little_Neck">
+        <item>11362</item>
+        <item>11363</item>
+    </string-array>
+
+    <string-array name="Malba">
+        <item>11357</item>
+    </string-array>
+
+
+    <string-array name="Maspeth">
+        <item>11378</item>
+    </string-array>
+
+    <string-array name="Meadowmere">
+        <item>11422</item>
+    </string-array>
+
+    <string-array name="Middle_Village">
+        <item>11379</item>
+    </string-array>
+
+    <string-array name="Neponsit">
+        <item>11694</item>
+    </string-array>
+
+    <string-array name="New_Hyde_Park">
+        <item>11040</item>
+        <item>11042</item>
+    </string-array>
+
+    <string-array name="North_Shore_Towers">
+        <item>11005</item>
+    </string-array>
+
+    <string-array name="Oakland_Gardens">
+        <item>11364</item>
+    </string-array>
+
+    <string-array name="Ozone_Park">
+        <item>11416</item>
+        <item>11417</item>
+    </string-array>
+
+    <string-array name="Pomonok">
+        <item>11365</item>
+        <item>11367</item>
+        <item>11366</item>
+    </string-array>
+
+    <string-array name="Queens_Village">
+        <item>11427</item>
+        <item>11428</item>
+        <item>11429</item>
+    </string-array>
+
+
+    <string-array name="Queensboro_Hill">
+        <item>11355</item>
+        <item>11367</item>
+    </string-array>
+
+    <string-array name="Queensbridge">
+        <item>11101</item>
+    </string-array>
+
+    <string-array name="Rego_Park">
+        <item>11374</item>
+    </string-array>
+
+    <string-array name="Richmond_Hill">
+        <item>11418</item>
+    </string-array>
+
+    <string-array name="Ridgewood">
+        <item>11385</item>
+        <item>11386</item>
+    </string-array>
+
+    <string-array name="Rochdale_Village">
+        <item>11434</item>
+    </string-array>
+
+    <string-array name="Rockaway_Beach">
+        <item>11693</item>
+    </string-array>
+
+    <string-array name="Rockaway_Park">
+        <item>11694</item>
+    </string-array>
+
+    <string-array name="Rosedale">
+        <item>11422</item>
+    </string-array>
+
+    <string-array name="Saint_Albans">
+        <item>11412</item>
+    </string-array>
+
+    <string-array name="South_Jamaica">
+        <item>11435</item>
+        <item>11433</item>
+        <item>11436</item>
+        <item>11434</item>
+    </string-array>
+
+    <string-array name="South_Ozone_Park">
+        <item>11420</item>
+        <item>11436</item>
+    </string-array>
+
+    <string-array name="Springfield_Gardens">
+        <item>11434</item>
+        <item>11413</item>
+    </string-array>
+
+    <string-array name="Sunnyside_Gardens">
+        <item>11104</item>
+    </string-array>
+
+    <string-array name="Tudor_Village">
+        <item>11417</item>
+    </string-array>
+
+    <string-array name="SunnysideQ">
+        <item>11104</item>
+    </string-array>
+
+    <string-array name="Whitestone">
+        <item>11357</item>
+    </string-array>
+
+    <string-array name="Willets_Point">
+        <item>11368</item>
+    </string-array>
+
+    <string-array name="Woodhaven">
+        <item>11377</item>
+    </string-array>
+
+    <!-- +++++++++++++    Manhattan Neighborhood zipCodes  +++++++++++++++++++++++++++++++++++++++++ -->
+
+    <string-array name="Battery_Park_City">
+        <item>10280</item>
+        <item>10282</item>
+        <item>10006</item>
+        <item>10004</item>
+    </string-array>
+
+    <string-array name="Bowery">
+        <item>10002</item>
+    </string-array>
+
+    <string-array name="Carnegie_Hill">
+        <item>10028</item>
+        <item>10128</item>
+    </string-array>
+
+    <string-array name="Central_Park">
+        <item>10023</item>
+        <item>10128</item>
+        <item>10021</item>
+        <item>10028</item>
+        <item>10019</item>
+        <item>10025</item>
+        <item>10024</item>
+        <item>10065</item>
+        <item>10029</item>
+        <item>10026</item>
+    </string-array>
+
+    <string-array name="Chelsea">
+        <item>10011</item>
+        <item>10001</item>
+        <item>10014</item>
+        <item>10119</item>
+        <item>10199</item>
+        <item>10121</item>
+        <item>10113</item>
+        <item>10116</item>
+        <item>10060</item>
+    </string-array>
+
+    <string-array name="Chinatown">
+        <item>10013</item>
+    </string-array>
+
+    <string-array name="Civic_Center">
+        <item>10007</item>
+        <item>10038</item>
+        <item>10278</item>
+        <item>10013</item>
+    </string-array>
+
+    <string-array name="East_Harlem">
+        <item>10029</item>
+        <item>10035</item>
+        <item>10037</item>
+        <item>10128</item>
+    </string-array>
+
+    <string-array name="Financial_District">
+        <item>10004</item>
+        <item>10005</item>
+        <item>10006</item>
+        <item>10038</item>
+    </string-array>
+
+    <string-array name="Flatiron">
+        <item>10010</item>
+        <item>10011</item>
+    </string-array>
+
+    <string-array name="Garment_District">
+        <item>10018</item>
+        <item>10036</item>
+        <item>10001</item>
+        <item>10122</item>
+        <item>10123</item>
+    </string-array>
+
+    <string-array name="Gramercy_Park">
+        <item>10003</item>
+        <item>10010</item>
+    </string-array>
+
+    <string-array name="Greenwich_Village">
+        <item>10003</item>
+        <item>10010</item>
+    </string-array>
+
+    <string-array name="East_Village">
+        <item>10003</item>
+        <item>10009</item>
+    </string-array>
+
+    <string-array name="West_Village">
+        <item>10014</item>
+        <item>10011</item>
+    </string-array>
+
+    <string-array name="Hamilton_Heights">
+        <item>10031</item>
+        <item>10032</item>
+        <item>10039</item>
+    </string-array>
+
+    <string-array name="Harlem">
+        <item>10027</item>
+        <item>10001</item>
+        <item>10037</item>
+        <item>10026</item>
+        <item>10030</item>
+        <item>10031</item>
+        <item>10039</item>
+        <item>10035</item>
+        <item>10032</item>
+    </string-array>
+
+    <string-array name="Hells_Kitchen_Clinton">
+        <item>10036</item>
+        <item>10001</item>
+        <item>10019</item>
+        <item>10018</item>
+        <item>10101</item>
+        <item>10109</item>
+        <item>10107</item>
+        <item>10102</item>
+    </string-array>
+
+    <string-array name="Inwood">
+        <item>10034</item>
+    </string-array>
+
+    <string-array name="Kips_Bay">
+        <item>10016</item>
+        <item>10010</item>
+    </string-array>
+
+    <string-array name="Lenox_Hill">
+        <item>10075</item>
+        <item>10065</item>
+        <item>10021</item>
+        <item>10131</item>
+        <item>10022</item>
+    </string-array>
+
+    <string-array name="Little_Italy">
+        <item>10012</item>
+        <item>10013</item>
+    </string-array>
+
+    <string-array name="Lower_Eastside">
+        <item>10002</item>
+        <item>10003</item>
+        <item>10009</item>
+    </string-array>
+
+    <string-array name="Madison_Square">
+        <item>10001</item>
+    </string-array>
+
+    <string-array name="Manhattan_Valley">
+        <item>10025</item>
+    </string-array>
+
+    <string-array name="Meatpacking_District">
+        <item>10014</item>
+    </string-array>
+
+    <string-array name="Midtown">
+        <item>10001</item>
+        <item>10003</item>
+        <item>10009</item>
+        <item>10010</item>
+        <item>10011</item>
+        <item>10016</item>
+        <item>10017</item>
+        <item>10018</item>
+        <item>10019</item>
+        <item>10020</item>
+        <item>10022</item>
+        <item>10036</item>
+    </string-array>
+
+    <string-array name="Morningside_Heights">
+        <item>10027</item>
+        <item>10025</item>
+        <item>10015</item>
+    </string-array>
+
+    <string-array name="Murray_Hill">
+        <item>10016</item>
+        <item>10017</item>
+        <item>10168</item>
+        <item>10165</item>
+    </string-array>
+
+    <string-array name="NOHO">
+        <item>10003</item>
+        <item>10011</item>
+        <item>10012</item>
+    </string-array>
+
+    <string-array name="NoLita">
+        <item>10012</item>
+    </string-array>
+
+    <string-array name="Roosevelt_Island">
+        <item>10044</item>
+        <item>10044</item>
+    </string-array>
+
+
+    <string-array name="SoHo">
+        <item>10014</item>
+        <item>10012</item>
+        <item>10013</item>
+    </string-array>
+
+    <string-array name="Stuyvesant_Town">
+        <item>10003</item>
+        <item>10009</item>
+        <item>10013</item>
+    </string-array>
+
+    <string-array name="Sutton_Place">
+        <item>10022</item>
+    </string-array>
+
+    <string-array name="Times_Square">
+        <item>10036</item>
+        <item>10018</item>
+        <item>10019</item>
+        <item>10020</item>
+    </string-array>
+
+    <string-array name="Tribeca">
+        <item>10007</item>
+        <item>10013</item>
+    </string-array>
+
+    <string-array name="Turtle_Bay">
+        <item>10017</item>
+        <item>10022</item>
+    </string-array>
+
+    <string-array name="Upper_East_side">
+        <item>10021</item>
+        <item>10028</item>
+        <item>10044</item>
+        <item>10065</item>
+        <item>10075</item>
+        <item>10128</item>
+    </string-array>
+
+    <string-array name="Upper_Westside">
+        <item>10023</item>
+        <item>10024</item>
+        <item>10025</item>
+    </string-array>
+
+    <string-array name="Washington_Heights">
+        <item>10032</item>
+        <item>10033</item>
+        <item>10040</item>
+        <item>10039</item>
+    </string-array>
+
+    <string-array name="Yorkville">
+        <item>10028</item>
+        <item>10128</item>
+        <item>10075</item>
+    </string-array>
+
+    <!-- +++++++++++++    Long Island Neighborhood zipCodes  +++++++++++++++++++++++++++++++++++++++++ -->
+
+    <string-array name="Annadale">
+        <item>10312</item>
+    </string-array>
+
+    <string-array name="Arden_Heights">
+        <item>10312</item>
+        <item>10309</item>
+    </string-array>
+
+    <string-array name="Arrochar">
+        <item>10305</item>
+    </string-array>
+
+    <string-array name="Bay_Street">
+        <item>10305</item>
+        <item>10304</item>
+    </string-array>
+
+    <string-array name="Bulls_Head">
+        <item>10314</item>
+    </string-array>
+
+    <string-array name="Castleton_Corners">
+        <item>10314</item>
+        <item>10310</item>
+        <item>10301</item>
+    </string-array>
+
+    <string-array name="Charleston">
+        <item>10309</item>
+    </string-array>
+
+    <string-array name="Clifton">
+        <item>10304</item>
+    </string-array>
+
+    <string-array name="Dongan_Hills">
+        <item>10304</item>
+        <item>10305</item>
+        <item>10306</item>
+    </string-array>
+
+    <string-array name="Eltingville">
+        <item>10312</item>
+        <item>10308</item>
+    </string-array>
+
+    <string-array name="Emerson_Hill">
+        <item>10301</item>
+        <item>10314</item>
+        <item>10304</item>
+    </string-array>
+
+    <string-array name="Graniteville">
+        <item>10302</item>
+        <item>10303</item>
+        <item>10314</item>
+    </string-array>
+
+    <string-array name="Grant_City">
+        <item>10306</item>
+    </string-array>
+
+    <string-array name="Grasmere">
+        <item>10304</item>
+        <item>10303</item>
+        <item>10314</item>
+    </string-array>
+
+    <string-array name="Concord">
+        <item>10304</item>
+        <item>10305</item>
+    </string-array>
+
+    <string-array name="Great_Kills">
+        <item>10312</item>
+        <item>10308</item>
+        <item>10306</item>
+    </string-array>
+
+    <string-array name="Grymes_Hill">
+        <item>10301</item>
+        <item>10304</item>
+    </string-array>
+
+    <string-array name="Huguenot">
+        <item>10309</item>
+        <item>10312</item>
+    </string-array>
+
+    <string-array name="Livingston">
+        <item>10310</item>
+    </string-array>
+
+    <string-array name="Manor_Heights">
+        <item>10314</item>
+    </string-array>
+
+    <string-array name="Mariners_Harbor">
+        <item>10303</item>
+    </string-array>
+
+    <string-array name="Midland_Beach">
+        <item>10304</item>
+        <item>10305</item>
+        <item>10306</item>
+    </string-array>
+
+    <string-array name="New_Brighton">
+        <item>10310</item>
+    </string-array>
+
+    <string-array name="New_Dorp">
+        <item>10306</item>
+        <item>10305</item>
+    </string-array>
+
+    <string-array name="New_Dorp_Beach">
+        <item>10306</item>
+    </string-array>
+
+    <string-array name="New_Springville">
+        <item>10314</item>
+    </string-array>
+
+    <string-array name="Oakwood_Beach">
+        <item>10316</item>
+        <item>10306</item>
+    </string-array>
+
+    <string-array name="Pleasant_Plains">
+        <item>10309</item>
+        <item>10307</item>
+    </string-array>
+
+    <string-array name="Port_Richmond">
+        <item>10302</item>
+        <item>10310</item>
+    </string-array>
+
+    <string-array name="Port_Ivory">
+        <item>10303</item>
+    </string-array>
+
+    <string-array name="Princes_Bay">
+        <item>10309</item>
+        <item>10312</item>
+    </string-array>
+
+    <string-array name="Richmondtown">
+        <item>10306</item>
+        <item>10304</item>
+        <item>10314</item>
+    </string-array>
+
+    <string-array name="Rosebank">
+        <item> 10305</item>
+    </string-array>
+
+    <string-array name="Rossville">
+        <item>10309</item>
+        <item> 10312</item>
+    </string-array>
+
+    <string-array name="Shore_Acres">
+        <item>10305</item>
+    </string-array>
+
+    <string-array name="Silver_Lake">
+        <item>10301</item>
+        <item>10305</item>
+    </string-array>
+
+
+    <string-array name="St_George">
+        <item>10301</item>
+    </string-array>
+
+    <string-array name="Stapleton">
+        <item>10301</item>
+        <item>10310</item>
+        <item>10304</item>
+    </string-array>
+
+    <string-array name="Sunnyside">
+        <item>10301</item>
+        <item>10314</item>
+    </string-array>
+
+    <string-array name="Todt_Hill">
+        <item>10306</item>
+        <item>10304</item>
+        <item>10314</item>
+        <item>10301</item>
+    </string-array>
+
+
+    <string-array name="Tompkinsville">
+        <item>10304</item>
+        <item>10301</item>
+    </string-array>
+
+    <string-array name="Tottenville">
+        <item>10307</item>
+        <item>10309</item>
+    </string-array>
+
+    <string-array name="Travis">
+        <item>10314</item>
+    </string-array>
+
+    <string-array name="West_New_Brighton">
+        <item>10310</item>
+    </string-array>
+
+    <string-array name="Westerleigh">
+        <item>10314</item>
+        <item>10310</item>
+        <item>10301</item>
+        <item>10302</item>
+    </string-array>
+
+    <string-array name="Willowbrook">
+        <item>10314</item>
+    </string-array>
+
+    <string-array name="Woodrow">
+        <item>10312</item>
+        <item>10309</item>
+    </string-array>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_restaurants_map">Map</string>
 
 </resources>

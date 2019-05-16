@@ -1,7 +1,52 @@
 package org.pursuit.restaurantgrades.Models;
 
-public class Restaurant {
-    private String dba,boro,building,street,zipcode,critical_flag,cuisine_description,grade,grade_date,inspection_date,phone,record_date,score,violation_description;
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Restaurant implements Parcelable {
+    private String camis,dba,boro,building,street,zipcode,critical_flag,cuisine_description,grade,grade_date,inspection_date,phone,record_date,score,violation_description;
+
+    protected Restaurant(Parcel in) {
+        camis = in.readString();
+        dba = in.readString();
+        boro = in.readString();
+        building = in.readString();
+        street = in.readString();
+        zipcode = in.readString();
+        critical_flag = in.readString();
+        cuisine_description = in.readString();
+        grade = in.readString();
+        grade_date = in.readString();
+        inspection_date = in.readString();
+        phone = in.readString();
+        record_date = in.readString();
+        score = in.readString();
+        violation_description = in.readString();
+    }
+
+    public static final Creator<Restaurant> CREATOR = new Creator<Restaurant>() {
+        @Override
+        public Restaurant createFromParcel(Parcel in) {
+            return new Restaurant(in);
+        }
+
+        @Override
+        public Restaurant[] newArray(int size) {
+            return new Restaurant[size];
+        }
+    };
+
+    public String getCamis() {
+        return camis;
+    }
+
+    public void setCamis(String camis) {
+        this.camis = camis;
+    }
+
+    public String getDba() {
+        return dba;
+    }
 
     public String getName() {
         return dba;
@@ -113,5 +158,29 @@ public class Restaurant {
 
     public void setViolation_description(String violation_description) {
         this.violation_description = violation_description;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(camis);
+        dest.writeString(dba);
+        dest.writeString(boro);
+        dest.writeString(building);
+        dest.writeString(street);
+        dest.writeString(zipcode);
+        dest.writeString(critical_flag);
+        dest.writeString(cuisine_description);
+        dest.writeString(grade);
+        dest.writeString(grade_date);
+        dest.writeString(inspection_date);
+        dest.writeString(phone);
+        dest.writeString(record_date);
+        dest.writeString(score);
+        dest.writeString(violation_description);
     }
 }

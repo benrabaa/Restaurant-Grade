@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".Views.SearchByNameFragment">
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="238dp"
+        android:layout_height="wrap_content"
+        android:text="Restaurant Inspection Information"
+        tools:layout_editor_absoluteX="87dp"
+        tools:layout_editor_absoluteY="5dp" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/text_input_restaurant_name"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="18dp"
+        app:errorEnabled="true"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Restaurant Name" />
+
+    </android.support.design.widget.TextInputLayout>
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="411dp"
+        android:layout_height="27dp"
+        android:gravity="center"
+        android:text="or"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteY="102dp" />
+
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="358dp"
+        android:layout_height="24dp"
+        android:gravity="center"
+        android:text="or"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="365dp" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/text_input_zip_code"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="5dp"
+        app:counterEnabled="true"
+
+        app:counterMaxLength="5"
+        app:errorEnabled="true"
+        app:layout_constraintBottom_toTopOf="@+id/list_counter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:hint="Zip Code:"
+            android:inputType="number" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <TextView
+        android:id="@+id/list_counter"
+        android:layout_width="411dp"
+        android:layout_height="28dp"
+        android:gravity="center_horizontal"
+        android:text="restaurant(s) match your criteria."
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="493dp" />
+
+    <Button
+        android:id="@+id/list_result_button"
+        android:layout_width="118dp"
+        android:layout_height="42dp"
+        android:text="list Result"
+        tools:layout_editor_absoluteX="60dp"
+        tools:layout_editor_absoluteY="545dp" />
+
+    <Button
+        android:id="@+id/map_result_button"
+        android:layout_width="134dp"
+        android:layout_height="46dp"
+        android:text="Map Result"
+        tools:layout_editor_absoluteX="237dp"
+        tools:layout_editor_absoluteY="545dp" />
+
+    <Spinner
+        android:id="@+id/search_name_boroughs_spinner"
+        android:layout_width="395dp"
+        android:layout_height="47dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/search_by_neighborhood"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <Spinner
+        android:id="@+id/search_by_neighborhood"
+        android:layout_width="395dp"
+        android:layout_height="47dp"
+        app:layout_constraintBottom_toTopOf="@+id/search_name_boroughs_spinner"
+        app:layout_constraintEnd_toEndOf="@+id/search_name_boroughs_spinner"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/search_name_boroughs_spinner"
+        app:layout_constraintTop_toBottomOf="@+id/search_by_cusion" />
+
+    <Spinner
+        android:id="@+id/search_by_cusion"
+        android:layout_width="395dp"
+        android:layout_height="47dp"
+        app:layout_constraintBottom_toTopOf="@+id/search_by_neighborhood"
+        app:layout_constraintEnd_toEndOf="@+id/search_by_neighborhood"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/search_by_neighborhood"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+
+</android.support.constraint.ConstraintLayout>

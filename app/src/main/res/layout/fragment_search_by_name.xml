@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/about_me_background_ii"
     tools:context=".Views.SearchByNameFragment">
 
 
@@ -11,9 +12,12 @@
         android:id="@+id/textView"
         android:layout_width="238dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="37dp"
-        android:layout_marginBottom="33dp"
-        android:text="Restaurant Inspection Information"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="15dp"
+        android:text="Search for Inspection Results"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/text_input_restaurant_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,9 +26,10 @@
     <android.support.design.widget.TextInputLayout
         android:id="@+id/text_input_restaurant_name"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:layout_marginBottom="46dp"
-        app:errorEnabled="true"
+        android:layout_height="66dp"
+        android:layout_marginBottom="12dp"
+        app:errorEnabled="false"
+        android:textColorHint="@android:color/white"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView">
@@ -33,32 +38,52 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Restaurant Name"
-            android:inputType="textEmailAddress" />
+            android:singleLine="true" />
 
     </android.support.design.widget.TextInputLayout>
 
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="411dp"
-        android:layout_height="27dp"
-        android:text="or"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
+        android:layout_marginBottom="114dp"
+        android:gravity="center_horizontal"
+        android:textColor="@android:color/white"
+        android:text="and/or"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/list_counter"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/search_name_cuisine_spinner" />
 
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="0dp"
+        android:layout_height="29dp"
+        android:layout_marginBottom="24dp"
+        android:gravity="center_horizontal"
+        android:text="and/or"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/search_name_boroughs_spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_input_restaurant_name" />
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/text_input_zip_code"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:layout_marginTop="20dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="24dp"
         app:counterEnabled="true"
-        app:counterMaxLength="15"
-        app:errorEnabled="true"
+        app:counterMaxLength="5"
+        app:boxStrokeColor="@android:color/white"
+        android:textColorHint="@android:color/white"
+        app:boxBackgroundColor="@android:color/white"
+
+        app:errorEnabled="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -67,64 +92,114 @@
         <android.support.design.widget.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Zip Code:"
-            android:inputType="text" />
+            android:textColorHighlight="@android:color/white"
+            android:hint="Zip Code"
+            android:inputType="number" />
 
     </android.support.design.widget.TextInputLayout>
 
     <TextView
         android:id="@+id/list_counter"
-        android:layout_width="411dp"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="28dp"
         android:layout_marginBottom="23dp"
-        android:text="2431 restaurant(s) match your criteria."
-        app:layout_constraintBottom_toTopOf="@+id/list_result_button"
+        android:gravity="center_horizontal"
+        android:text=" - restaurant(s) match your criteria."
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/map_result_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <Button
+        android:id="@+id/list_result_button"
+        android:layout_width="126dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="41dp"
+        android:layout_marginEnd="61dp"
+        android:layout_marginBottom="39dp"
+        android:text="list Result"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/map_result_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/list_counter"
+        app:layout_constraintVertical_bias="0.333" />
+
+    <Button
+        android:id="@+id/map_result_button"
+        android:layout_width="0dp"
+        android:layout_height="39dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginBottom="13dp"
+        android:text="Map Result"
+        app:layout_constraintBottom_toTopOf="@+id/map_note"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/list_counter" />
+
+    <Spinner
+        android:id="@+id/search_name_boroughs_spinner"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:outlineAmbientShadowColor="@android:color/white"
+       android:outlineSpotShadowColor="@android:color/white"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/search_name_neighborhoods_spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <Spinner
+        android:id="@+id/search_name_neighborhoods_spinner"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="17dp"
+        app:layout_constraintBottom_toTopOf="@+id/search_name_cuisine_spinner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/search_name_boroughs_spinner" />
 
-    <Button
-        android:id="@+id/list_result_button"
-        android:layout_width="411dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="76dp"
-        android:text="list Result"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <Spinner
+        android:id="@+id/search_name_cuisine_spinner"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/list_counter" />
-
-    <Button
-        android:id="@+id/map_result_button"
-        android:layout_width="411dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="Map Result"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/search_name_neighborhoods_spinner" />
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        android:text="Boroughs:"
-        app:layout_constraintBottom_toTopOf="@+id/search_name_boroughs_spinner"
+        android:id="@+id/map_note"
+        android:layout_width="0dp"
+        android:layout_height="39dp"
+        android:layout_marginBottom="9dp"
+        android:gravity="center_horizontal"
+        android:text="reduce the search to less than 100 to show in map."
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="14sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_input_restaurant_name" />
+        app:layout_constraintTop_toBottomOf="@+id/map_result_button" />
 
-    <Spinner
-        android:id="@+id/search_name_boroughs_spinner"
-        android:layout_width="395dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="179dp"
-        app:layout_constraintBottom_toTopOf="@+id/list_counter"
-        app:layout_constraintEnd_toEndOf="parent"
+    <android.support.v4.widget.ContentLoadingProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </android.support.constraint.ConstraintLayout>

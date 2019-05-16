@@ -1,21 +1,38 @@
 package org.pursuit.restaurantgrades.Views;
 
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Parcelable;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Html;
+import android.view.MenuItem;
 import android.widget.Spinner;
+import android.widget.TextView;
 
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+
+import org.pursuit.restaurantgrades.DataStorage;
 import org.pursuit.restaurantgrades.Models.Restaurant;
 import org.pursuit.restaurantgrades.R;
-//import org.pursuit.restaurantgrades.Models.NeighborhoodResponse;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements OnFragmentInteractionListener {
-    private List<String> neighborhoodResponseList=new ArrayList<>();
-    private List<List<String>> restaurantList =new ArrayList<>();
+    private static final String ARG_PARAM1 = "RestaurantsList";
+
+    private List<String> neighborhoodResponseList = new ArrayList<>();
+    private List<List<String>> restaurantList = new ArrayList<>();
+    private DataStorage dataStorage;
     private Spinner neighborhoodsSpinner;
     private Spinner boroughsSpinner;
+    private BottomNavigationView bottomNav;
+
 
 
     @Override
@@ -23,86 +40,120 @@ public class MainActivity extends AppCompatActivity implements OnFragmentInterac
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        neighborhoodsSpinner =findViewById(R.id.Neighborhoods_spinner);
-//        boroughsSpinner=findViewById(R.id.boroughs);
-
-
-
-
-
-
-
-       // ArrayAdapter<String> adapter=new ArrayAdapter<String>(
-         //       this,android.R.layout.simple_spinner_item,neighborhoodResponseList);
-        //adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        //neighborhoodsSpinner.setAdapter(new ArrayAdapter<test>(this, android.R.layout.simple_spinner_item
-          //      , test.values()));
-
-        //neighborhoodsSpinner.setAdapter(adapter);
-//        boroughsSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//                String[] brooklynNeighborhoods = getResources().getStringArray(R.array.Brooklyn);
-//
-//               // ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, R.id.text, brooklynNeighborhoods);
-//
-////                spinner.setAdapter(adapter);
-////                neighborhoodsSpinner.setAdapter(new ArrayAdapter<test>(this, android.R.layout.simple_spinner_item
-////                        ,brooklynNeighborhoods));
-//
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> parent) {
-//
-//            }
-//        });
-
+        dataStorage = DataStorage.getInstance();
 
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_container, SearchFragment.getInstance())
                 .addToBackStack(null)
                 .commit();
+        bottomNav = findViewById(R.id.bottom_navigation);
 
-
+        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
+        bottomNav.setOnNavigationItemSelectedListener(navListener);
 
 
 
     }
 
+
+
+    private BottomNavigationView.OnNavigationItemSelectedListener navListener =
+            new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                    Fragment selectedFragment = null;
+
+                    switch (item.getItemId()) {
+                        case R.id.nav_home:
+                            openSearchFragment();
+                            //selectedFragment = new HomeFragment();
+                            break;
+                        case R.id.nav_favorites:
+                            openFavoritesFragment();
+                           // selectedFragment = new FavoritesFragment();
+                            break;
+                        case R.id.nav_search:
+                            //selectedFragment = new SearchFragment();
+                            openSearchByNameFragment();
+                            break;
+                    }
+//                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+//                            selectedFragment).commit();
+
+                    return true;
+                }
+            };
+
     @Override
     public void openSearchByNameFragment() {
-//        SearchByNameFragment searchByNameFragment= SearchByNameFragment.getInstance();
-//        searchByNameFragment.getFragmentManager().beginTransaction().replace(R.id.fragment_container,searchByNameFragment).commit();
-
-
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_container, SearchByNameFragment.newInstance(restaurantList))
                 .addToBackStack(null)
                 .commit();
-//
-//FragmentManager fragmentManager=getSupportFragmentManager().re
-//                detailsFragment.setArguments(bundle);
-//        FragmentManager fragmentManager=getSupportFragmentManager();
-//        FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
-//        fragmentTransaction.replace(R.id.fragment_container,detailsFragment).commit();
     }
 
     @Override
     public void openSearchFragment() {
-        SearchFragment searchFragment=SearchFragment.getInstance();
-        searchFragment.getFragmentManager().beginTransaction().replace(R.id.fragment_container,searchFragment).commit();
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment_container, SearchFragment.getInstance())
+                .addToBackStack(null)
+                .commit();
     }
 
     @Override
-    public void openDetailsFragment(List<Restaurant> restaurantList) {
-
+    public void openFavoritesFragment() {
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fragment_container,DetailsFragment.getInstance(restaurantList))
+                .replace(R.id.fragment_container, FavoritesFragment.newInstance())
                 .addToBackStack(null)
                 .commit();
-//        DetailsFragment detailsFragment=DetailsFragment.getInstance(restaurantList);
-//        detailsFragment.getFragmentManager().beginTransaction().replace(R.id.fragment_container,detailsFragment).commit();
+    }
 
+    @Override
+    public void openSlideGradesFramgment() {
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment_container, GradesFragment.newInstance())
+                .addToBackStack(null)
+                .commit();
+    }
+
+    @Override
+    public void openAboutMeFragment() {
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment_container, AboutMeFragment.newInstance())
+                .addToBackStack(null)
+                .commit();
+    }
+
+    @Override
+    public void openDetailsFragment(Restaurant restaurant) {
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment_container, DetailsFragment.newInstance(restaurant))
+                .addToBackStack(null)
+                .commit();
+    }
+
+    @Override
+    public void openRestaurantRecyclerViewFragment(List<Restaurant> restaurantList) {
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment_container, RestaurantRecyclerViewFragment.getInstance(restaurantList))
+                .addToBackStack(null)
+                .commit();
+    }
+
+    @Override
+    public void openRestaurantGoogleMap(String location) {
+        Uri gmmIntentUri = Uri.parse("geo:?z=10&q="+location);
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+        mapIntent.setPackage("com.google.android.apps.maps");
+        startActivity(mapIntent);
+
+    }
+
+    @Override
+    public void openRestaurantsListGoogleMap(List<Restaurant> restaurantList) {
+
+        Intent intent = new Intent(this, RestaurantsMapActivity.class);
+        intent.putParcelableArrayListExtra(ARG_PARAM1, (ArrayList<? extends Parcelable>) restaurantList);
+        this.startActivity(intent);
     }
 }
